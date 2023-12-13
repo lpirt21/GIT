@@ -41,7 +41,10 @@ public class Hangman extends ConsoleProgram {
     		println(checkChar(theCh,ac));
     		if(checkChar(theCh,ac)){
     			lin = newWord(theCh,ac,lin);
+    		}else {
+    			mistakes--;
     		}
+    		if(mistakes == 0)break;
     	}
     	
     }
