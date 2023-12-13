@@ -33,6 +33,7 @@ public class Hangman extends ConsoleProgram {
     	char theCh ='0';
     	println("Welcome to Hangman!");
     	String lin = theWord(length);
+    	String incorrectChars = "";
     	while(true) {
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
@@ -49,6 +50,7 @@ public class Hangman extends ConsoleProgram {
     		}else {
     			println("There are no " + theCh + "'s in the word");
     			mistakes--;
+    			println(addIncorrectChar(theCh,incorrectChars));
     		}
     		if(mistakes == 0) {
     			println("You're completely hung");
@@ -63,6 +65,23 @@ public class Hangman extends ConsoleProgram {
     	
     }
     
+    private String addIncorrectChar(char newChar,String original) {
+    	boolean flag =false;
+    	char th = Character.toUpperCase(newChar);
+    	String k = "";
+    	String res = "";
+    	for(int t=0; t<original.length();t++) {
+    		char the = original.charAt(t);
+    		k+= Character.toUpperCase(the);
+    	}
+    	for(int y =0; y<k.length();y++) {
+    		char the2 = k.charAt(y);
+    		if(the2!=th) {
+    			res+=Character.toUpperCase(the2);
+    		}
+    	}
+    	return res;
+    }
     
     private boolean isOver(String l) {
     	for(int q=0; q<l.length();q++) {
