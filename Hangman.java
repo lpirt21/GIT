@@ -64,7 +64,7 @@ public class Hangman extends ConsoleProgram {
     	for(int l = 0; l<bl.length(); l++) {
     		if(l!=g) {
     		ml+=bl.charAt(l);
-    		}else {
+    		}else if(l==g){
     			ml+=v;
     		}
     	}
