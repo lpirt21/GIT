@@ -54,7 +54,7 @@ public class Hangman extends ConsoleProgram {
         	char b =word.charAt(j);
  		   if(b == ch) {
  			   newWor+=b;
- 		   }else {
+ 		   }else if(b!=ch){
  			   newWor+="-";
  		   }
         }
