@@ -48,8 +48,21 @@ public class Hangman extends ConsoleProgram {
     		if(mistakes == 0) {
     			println("You lose.");break;
     		}
+    		if(isOver(lin)) {
+    			println("You win.");break;
+    		}
     	}
     	
+    }
+    
+    
+    
+    private boolean isOver(String l) {
+    	for(int q=0; q<l.length();q++) {
+    		char b = l.charAt(q);
+    		if(b=='-')return false;
+    	}
+    	return true;
     }
  
     
