@@ -47,6 +47,7 @@ public class Hangman extends ConsoleProgram {
     		if(checkChar(theCh,ac)){
     			println("The guess is correct.");
     			lin = newWord(theCh,ac,lin);
+    			canvas.displayWord(lin);
     		}else {
     			println("There are no " + theCh + "'s in the word");
     			mistakes--;
