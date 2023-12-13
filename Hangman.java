@@ -69,7 +69,7 @@ public class Hangman extends ConsoleProgram {
     	boolean flag =false;
     	char th = Character.toUpperCase(newChar);
     	String k = "";
-    	String res = "";
+    	String res = original;
     	for(int t=0; t<original.length();t++) {
     		char the = original.charAt(t);
     		k+= Character.toUpperCase(the);
