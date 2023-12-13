@@ -34,7 +34,7 @@ public class Hangman extends ConsoleProgram {
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
     		theCh = readChar(theChar);
-    		while(theChar.length()>1 || !isChar(theCh)) {
+    		while(theChar.length()>1 || !isChar(theCh) ||theChar.length()<=0) {
     			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
