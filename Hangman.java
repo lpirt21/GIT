@@ -76,7 +76,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	for(int y =0; y<k.length();y++) {
     		char the2 = k.charAt(y);
-    			res+=Character.toUpperCase(the2);
+    		res+=Character.toUpperCase(th);
     	}
     	return res;
     }
