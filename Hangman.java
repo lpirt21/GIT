@@ -70,17 +70,17 @@ public class Hangman extends ConsoleProgram {
  
     
     private String newWord(char ch, String word,String li) {
-    	String word2 = "";
-    	for(int s =0; s<word.length();s++) {
-    		char ch2 = word.charAt(s);
-    		char ch3 = Character.toUpperCase(ch2);
-    		word2+=ch3;
+    	String word3 = "";
+    	for(int r =0; r<word.length();r++) {
+    		char ch5 = word.charAt(r);
+    		char ch6 = Character.toUpperCase(ch5);
+    		word3+=ch6;
     	}
-    	char ch4 = Character.toUpperCase(ch);
+    	char ch7 = Character.toUpperCase(ch);
     	String newWor =li;
-        for(int j = 0; j<word2.length();j++) {
-        	char b =word2.charAt(j);
- 		   if(b == ch4) {
+        for(int j = 0; j<word3.length();j++) {
+        	char b =word3.charAt(j);
+ 		   if(b == ch7) {
  			   newWor = changeChar(newWor,b,j);
  		   }
         }
@@ -102,9 +102,16 @@ public class Hangman extends ConsoleProgram {
     
    private boolean checkChar(char ch, String word) {
 	   boolean flag = false;
-	   for(int i=0; i<word.length();i++) {
-		   char a =word.charAt(i);
-		   if(a == ch)flag = true;
+	   String word2 = "";
+   	for(int s =0; s<word.length();s++) {
+   		char ch2 = word.charAt(s);
+   		char ch3 = Character.toUpperCase(ch2);
+   		word2+=ch3;
+   	}
+   	char ch4 = Character.toUpperCase(ch);
+	   for(int i=0; i<word2.length();i++) {
+		   char a =word2.charAt(i);
+		   if(a == ch4)flag = true;
 	   }
 	   return flag;
    }
