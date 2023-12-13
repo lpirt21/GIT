@@ -22,10 +22,12 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
+		if(label1 !=null) {
+			remove(label1);
+		}
 		String n = word;
-		GLabel label = new GLabel(n);
-		add(label,10,10);
-		n ="";
+		label1 = new GLabel(n);
+		add(label1,10,10);
 	}
 
 /**
@@ -40,7 +42,7 @@ public class HangmanCanvas extends GCanvas {
 		add(label,100,100);
 	}
 
-	
+	private GLabel label1;
 	private String str ="";
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
