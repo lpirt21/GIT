@@ -16,6 +16,11 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
     public void run() {
+    	thegame();
+    	
+	}
+
+    private void thegame() {
     	HangmanLexicon numOfWords = new HangmanLexicon();
     	int l = numOfWords.getWordCount();
     	int m = rgen.nextInt(0,l-1);
@@ -38,9 +43,7 @@ public class Hangman extends ConsoleProgram {
     		}
     		
     	}
-	}
-
-    
+    }
  
     
     private boolean isChar(char th) {
