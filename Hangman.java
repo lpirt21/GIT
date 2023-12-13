@@ -88,7 +88,6 @@ public class Hangman extends ConsoleProgram {
     }
     
     private String changeChar(String bl,char v,int g) {
-    	
     	String ml = "";
     	for(int l = 0; l<bl.length(); l++) {
     		if(l==g){

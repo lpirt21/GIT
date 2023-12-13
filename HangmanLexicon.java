@@ -18,10 +18,10 @@ public class HangmanLexicon {
 	public String getWord(int index) {
 		switch (index) {
 			case 0: return "BUOY";
-			case 1: return "COMPUTER";
+			case 1: return "Computer";
 			case 2: return "CONNOISSEUR";
 			case 3: return "DEHYDRATE";
-			case 4: return "FUZZY";
+			case 4: return "Fuzzy";
 			case 5: return "HUBBUB";
 			case 6: return "KEYHOLE";
 			case 7: return "QUAGMIRE";
