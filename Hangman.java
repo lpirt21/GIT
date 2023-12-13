@@ -52,7 +52,7 @@ public class Hangman extends ConsoleProgram {
     			println("You lose.");break;
     		}
     		if(isOver(lin)) {
-    			println("You guessed the word " + lin);
+    			println("You guessed the word: " + lin);
     			println("You win.");break;
     		}
     	}
