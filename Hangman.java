@@ -40,25 +40,35 @@ public class Hangman extends ConsoleProgram {
     		}
     		println(checkChar(theCh,ac));
     		if(checkChar(theCh,ac)){
-    			lin = newWord(theCh,ac);
+    			lin = newWord(theCh,ac,lin);
     		}
     	}
     	
     }
  
     
-    private String newWord(char ch, String word) {
+    private String newWord(char ch, String word,String li) {
     	int q = 0;
-    	String newWor = "";
+    	String newWor =li;
         for(int j = 0; j<word.length();j++) {
         	char b =word.charAt(j);
  		   if(b == ch) {
- 			   newWor+=b;
- 		   }else if(b!=ch){
- 			   newWor+="-";
+ 			   changeChar(newWor,b,j);
  		   }
         }
     	return newWor;
+    }
+    
+    private String changeChar(String bl,char v,int g) {
+    	String ml = "";
+    	for(int l = 0; l<bl.length(); l++) {
+    		if(l!=g) {
+    		ml+=bl.charAt(l);
+    		}else {
+    			ml+=v;
+    		}
+    	}
+    	return ml;
     }
     
    private boolean checkChar(char ch, String word) {
