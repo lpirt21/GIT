@@ -26,7 +26,6 @@ public class Hangman extends ConsoleProgram {
     	String ac = getWordFrom(m);
     	int length = ac.length();
     	char theCh ='0';
-    	char theCh2 = '0';
     	println("Welcome to Hangman!");
     	String lin = theWord(length);
     	while(true) {
@@ -70,17 +69,10 @@ public class Hangman extends ConsoleProgram {
  
     
     private String newWord(char ch, String word,String li) {
-    	String word3 = "";
-    	for(int r =0; r<word.length();r++) {
-    		char ch5 = word.charAt(r);
-    		char ch6 = Character.toUpperCase(ch5);
-    		word3+=ch6;
-    	}
-    	char ch7 = Character.toUpperCase(ch);
     	String newWor =li;
-        for(int j = 0; j<word3.length();j++) {
-        	char b =word3.charAt(j);
- 		   if(b == ch7) {
+        for(int j = 0; j<word.length();j++) {
+        	char b =word.charAt(j);
+ 		   if(Character.toLowerCase(b) == ch || Character.toUpperCase(b)==ch) {
  			   newWor = changeChar(newWor,b,j);
  		   }
         }
@@ -138,6 +130,6 @@ public class Hangman extends ConsoleProgram {
    		return word;
     }
     
-    private int wordAm = 10;
+   
     private int mistakes = 8;
 }
