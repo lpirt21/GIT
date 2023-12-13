@@ -40,6 +40,10 @@ public class Hangman extends ConsoleProgram {
     			println("Please enter a letter");
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
+    			while(theChar.length()>1) {
+        			println("Please enter one character");
+        			theChar = readLine("Your guess: ");
+        		}
     		}
     		
     	}
