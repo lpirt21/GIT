@@ -40,8 +40,13 @@ public class HangmanCanvas extends GCanvas {
 		str+=letter;
 		GLabel label = new GLabel(str);
 		add(label,100,100);
+		addOrgan();
 	}
 
+	private void addOrgan() {
+		
+	}
+	
 	private GLabel label1;
 	private String str ="";
 /* Constants for the simple version of the picture (in pixels) */

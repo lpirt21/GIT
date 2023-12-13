@@ -34,6 +34,7 @@ public class Hangman extends ConsoleProgram {
     	println("Welcome to Hangman!");
     	String lin = theWord(length);
     	String incorrectChars = "";
+    	String correctChars ="";
     	while(true) {
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
@@ -45,8 +46,13 @@ public class Hangman extends ConsoleProgram {
     			theCh = readChar(theChar);
     		}
     		if(checkChar(theCh,ac)){
+    			if(checkChar(theCh,correctChars)) {
+    				println("You made this guess already");
+    			}else {
     			println("The guess is correct.");
+    			}
     			lin = newWord(theCh,ac,lin);
+    			correctChars+=Character.toUpperCase(theCh);
     			canvas.displayWord(lin);
     		}else {
     			println("There are no " + theCh + "'s in the word");
