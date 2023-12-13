@@ -68,7 +68,7 @@ public class Hangman extends ConsoleProgram {
     
     private String addIncorrectChar(char newChar,String original) {
     	String res = "";
-    	if(checkChar(newChar,original)) {
+    	if(!checkChar(newChar,original)) {
     		res+=newChar;
     	}
     	return res;
