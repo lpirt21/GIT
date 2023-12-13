@@ -41,14 +41,17 @@ public class Hangman extends ConsoleProgram {
     		}
     		println(checkChar(theCh,ac));
     		if(checkChar(theCh,ac)){
+    			println("The guess is correct.");
     			lin = newWord(theCh,ac,lin);
     		}else {
     			mistakes--;
     		}
     		if(mistakes == 0) {
+    			println("The word was " + ac);
     			println("You lose.");break;
     		}
     		if(isOver(lin)) {
+    			println("You guessed the word " + lin);
     			println("You win.");break;
     		}
     	}
