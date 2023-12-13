@@ -53,7 +53,7 @@ public class Hangman extends ConsoleProgram {
         for(int j = 0; j<word.length();j++) {
         	char b =word.charAt(j);
  		   if(b == ch) {
- 			   changeChar(newWor,b,j);
+ 			   newWor = changeChar(newWor,b,j);
  		   }
         }
     	return newWor;
@@ -62,10 +62,10 @@ public class Hangman extends ConsoleProgram {
     private String changeChar(String bl,char v,int g) {
     	String ml = "";
     	for(int l = 0; l<bl.length(); l++) {
-    		if(l!=g) {
-    		ml+=bl.charAt(l);
-    		}else if(l==g){
+    		if(l==g){
     			ml+=v;
+    		}else {
+    			ml+=bl.charAt(l);
     		}
     	}
     	return ml;
