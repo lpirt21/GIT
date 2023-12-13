@@ -22,8 +22,10 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		GLabel label = new GLabel(word);
+		String n = word;
+		GLabel label = new GLabel(n);
 		add(label,10,10);
+		n ="";
 	}
 
 /**
