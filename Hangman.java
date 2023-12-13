@@ -29,18 +29,22 @@ public class Hangman extends ConsoleProgram {
     	while(true) {
     		println("The word now looks like this: " + theWord(length));
     		println("You have " + mistakes + " guesses left.");
-    		String theChar = readLine("Your guess: ");
-    		char theCh = readChar(theChar);
-    		while(theChar.length()>1 || !isChar(theCh)) {
-    			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
-    			theChar = readLine("Your guess: ");
-    			theCh = readChar(theChar);
-    		}
-
+    		getChar();
     		
     	}
     }
  
+    private char getChar() {
+    	String theChar = readLine("Your guess: ");
+		char theCh = readChar(theChar);
+		while(theChar.length()>1 || !isChar(theCh)) {
+			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
+			theChar = readLine("Your guess: ");
+			theCh = readChar(theChar);
+		}
+		return theCh;
+    }
+    
     
     private boolean isChar(char th) {
     	return Character.isLetter(th);
