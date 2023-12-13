@@ -50,7 +50,8 @@ public class Hangman extends ConsoleProgram {
     		}else {
     			println("There are no " + theCh + "'s in the word");
     			mistakes--;
-    			println(addIncorrectChar(theCh,incorrectChars));
+    			incorrectChars = addIncorrectChar(theCh,incorrectChars);
+    			println(incorrectChars);
     		}
     		if(mistakes == 0) {
     			println("You're completely hung");
