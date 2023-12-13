@@ -25,27 +25,49 @@ public class Hangman extends ConsoleProgram {
     	int m = rgen.nextInt(0,l-1);
     	String ac = getWordFrom(m);
     	int length = ac.length();
+    	char theCh ='0';
     	println("Welcome to Hangman!");
+    	String lin = theWord(length);
     	while(true) {
-    		println("The word now looks like this: " + theWord(length));
+    		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
-    		getChar();
-    		char n = getChar();
-    		println(n);
+    		String theChar = readLine("Your guess: ");
+    		theCh = readChar(theChar);
+    		while(theChar.length()>1 || !isChar(theCh)) {
+    			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
+    			theChar = readLine("Your guess: ");
+    			theCh = readChar(theChar);
+    		}
+    		if(checkChar(theCh,ac)){
+    			lin = newWord(theCh,ac);
+    		}
     	}
+    	
     }
  
-    private char getChar() {
-    	String theChar = readLine("Your guess: ");
-		char theCh = readChar(theChar);
-		while(theChar.length()>1 || !isChar(theCh)) {
-			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
-			theChar = readLine("Your guess: ");
-			theCh = readChar(theChar);
-		}
-		return theCh;
+    
+    private String newWord(char ch, String word) {
+    	int q = 0;
+    	String newWor = "";
+        for(int j = 0; j<word.length();j++) {
+        	char b =word.charAt(j);
+ 		   if(b == ch) {
+ 			   newWor+=b;
+ 		   }else {
+ 			   newWor+="-";
+ 		   }
+        }
+    	return newWor;
     }
     
+   private boolean checkChar(char ch, String word) {
+	   boolean flag = false;
+	   for(int i=0;i <word.length();i++) {
+		   char a =word.charAt(i);
+		   if(a == ch)flag = true;
+	   }
+	   return flag;
+   }
     
     private boolean isChar(char th) {
     	return Character.isLetter(th);
