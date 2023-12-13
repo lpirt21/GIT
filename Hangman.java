@@ -52,6 +52,10 @@ public class Hangman extends ConsoleProgram {
     			mistakes--;
     			incorrectChars += addIncorrectChar(theCh,incorrectChars);
     			println(incorrectChars);
+    			if(checkChar(theCh,incorrectChars)){
+    			char c = Character.toUpperCase(theCh);
+    			canvas.noteIncorrectGuess(c);
+    			}
     		}
     		if(mistakes == 0) {
     			println("You're completely hung");
@@ -66,7 +70,7 @@ public class Hangman extends ConsoleProgram {
     	
     }
     
-    private String addIncorrectChar(char newChar,String original) {
+    public String addIncorrectChar(char newChar,String original) {
     	String res = "";
     	if(!checkChar(newChar,original)) {
     		res+=Character.toUpperCase(newChar);
