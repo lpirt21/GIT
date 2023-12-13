@@ -67,19 +67,9 @@ public class Hangman extends ConsoleProgram {
     }
     
     private String addIncorrectChar(char newChar,String original) {
-    	boolean flag =false;
-    	char th = Character.toUpperCase(newChar);
-    	String k = "";
-    	String res = original;
-    	for(int t=0; t<original.length();t++) {
-    		char the = original.charAt(t);
-    		k+= Character.toUpperCase(the);
-    	}
-    	for(int f = 0; f<k.length(); f++) {
-    		char er = k.charAt(f);
-    		if(er != th) {
-    		res+=th;
-    		}
+    	String res = "";
+    	if(checkChar(newChar,original)) {
+    		res+=newChar;
     	}
     	return res;
     }
