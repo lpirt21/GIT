@@ -16,8 +16,24 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
     public void run() {
-    	String wor = getWordFrom(4);
-    	println(wor);
+    	HangmanLexicon numOfWords = new HangmanLexicon();
+    	int l = numOfWords.getWordCount();
+    	int m = rgen.nextInt(0,l-1);
+    	String ac = getWordFrom(m);
+    	int length = ac.length();
+    	println("Welcome to Hangman!");
+    	while(true) {
+    		println("The word now looks like this: " + theWord(length));
+    		println("You have " + mistakes + " guesses left.");
+    		String theChar = readLine("Your guess: ");
+    		while(theChar.length()>1) {
+    			println("Please enter one character");
+    		}
+    		char theCh = readChar(theChar);
+    		while(!isChar(theCh)) {
+    			println("Please enter a letter");
+    		}
+    	}
 	}
 
     
@@ -39,7 +55,6 @@ public class Hangman extends ConsoleProgram {
     	}
     	return wor;
     }
-    
     
     private String getWordFrom(int n) {
     	HangmanLexicon words = new HangmanLexicon();
