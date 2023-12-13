@@ -30,7 +30,8 @@ public class Hangman extends ConsoleProgram {
     		println("The word now looks like this: " + theWord(length));
     		println("You have " + mistakes + " guesses left.");
     		getChar();
-    		println(getChar());
+    		char n = getChar();
+    		println(n);
     	}
     }
  
