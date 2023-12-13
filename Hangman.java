@@ -39,7 +39,6 @@ public class Hangman extends ConsoleProgram {
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
     		}
-    		println(checkChar(theCh,ac));
     		if(checkChar(theCh,ac)){
     			println("The guess is correct.");
     			lin = newWord(theCh,ac,lin);
@@ -48,6 +47,7 @@ public class Hangman extends ConsoleProgram {
     			mistakes--;
     		}
     		if(mistakes == 0) {
+    			println("You're completely hung");
     			println("The word was " + ac);
     			println("You lose.");break;
     		}
@@ -60,7 +60,6 @@ public class Hangman extends ConsoleProgram {
     }
     
     
-    
     private boolean isOver(String l) {
     	for(int q=0; q<l.length();q++) {
     		char b = l.charAt(q);
@@ -71,10 +70,17 @@ public class Hangman extends ConsoleProgram {
  
     
     private String newWord(char ch, String word,String li) {
+    	String word2 = "";
+    	for(int s =0; s<word.length();s++) {
+    		char ch2 = word.charAt(s);
+    		char ch3 = Character.toUpperCase(ch2);
+    		word2+=ch3;
+    	}
+    	char ch4 = Character.toUpperCase(ch);
     	String newWor =li;
-        for(int j = 0; j<word.length();j++) {
-        	char b =word.charAt(j);
- 		   if(b == ch) {
+        for(int j = 0; j<word2.length();j++) {
+        	char b =word2.charAt(j);
+ 		   if(b == ch4) {
  			   newWor = changeChar(newWor,b,j);
  		   }
         }
@@ -82,6 +88,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     private String changeChar(String bl,char v,int g) {
+    	
     	String ml = "";
     	for(int l = 0; l<bl.length(); l++) {
     		if(l==g){
