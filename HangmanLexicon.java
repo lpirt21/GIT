@@ -18,15 +18,15 @@ public class HangmanLexicon {
 	public String getWord(int index) {
 		switch (index) {
 			case 0: return "BUOY";
-			case 1: return "Computer";
-			case 2: return "Connisseur";
-			case 3: return "Degydrate";
-			case 4: return "Fuzzy";
-			case 5: return "Hubbub";
-			case 6: return "Keyhole";
-			case 7: return "Quaqmire";
-			case 8: return "Slither";
-			case 9: return "Zircon";
+			case 1: return "COMPUTER";
+			case 2: return "CONNOISSEUR";
+			case 3: return "DEHYDRATE";
+			case 4: return "FUZZY";
+			case 5: return "HUBBUB";
+			case 6: return "KEYHOLE";
+			case 7: return "QUAGMIRE";
+			case 8: return "SLITHER";
+			case 9: return "ZIRCON";
 			default: throw new ErrorException("getWord: Illegal index");
 		}
 	};

@@ -15,6 +15,11 @@ public class Hangman extends ConsoleProgram {
 	
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
+	public void init() {
+		canvas = new HangmanCanvas();
+		add(canvas);
+	}
+	
     public void run() {
     	theGame();
 	}
@@ -94,13 +99,13 @@ public class Hangman extends ConsoleProgram {
    private boolean checkChar(char ch, String word) {
 	   boolean flag = false;
 	   String word2 = "";
-   	for(int s =0; s<word.length();s++) {
+   		for(int s =0; s<word.length();s++) {
    		char ch2 = word.charAt(s);
    		char ch3 = Character.toUpperCase(ch2);
    		word2+=ch3;
-   	}
-   	char ch4 = Character.toUpperCase(ch);
-	   for(int i=0; i<word2.length();i++) {
+   		}
+   		char ch4 = Character.toUpperCase(ch);
+   		for(int i=0; i<word2.length();i++) {
 		   char a =word2.charAt(i);
 		   if(a == ch4)flag = true;
 	   }
@@ -130,6 +135,6 @@ public class Hangman extends ConsoleProgram {
    		return word;
     }
     
-   
+    private HangmanCanvas canvas;
     private int mistakes = 8;
 }
