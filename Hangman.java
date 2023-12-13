@@ -28,11 +28,15 @@ public class Hangman extends ConsoleProgram {
     		String theChar = readLine("Your guess: ");
     		while(theChar.length()>1) {
     			println("Please enter one character");
+    			theChar = readLine("Your guess: ");
     		}
     		char theCh = readChar(theChar);
     		while(!isChar(theCh)) {
     			println("Please enter a letter");
+    			theChar = readLine("Your guess: ");
+    			theCh = readChar(theChar);
     		}
+    		
     	}
 	}
 
