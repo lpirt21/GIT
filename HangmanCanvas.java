@@ -38,7 +38,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 	
-	private String str;
+	private String str ="";
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
 	private static final int BEAM_LENGTH = 144;
