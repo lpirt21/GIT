@@ -16,9 +16,8 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
     public void run() {
-    	HangmanLexicon words = new HangmanLexicon();
-   		String word = words.getWord(6);
-   		println(word);
+    	String wor = getWordFrom(4);
+    	println(wor);
 	}
 
     
@@ -42,7 +41,11 @@ public class Hangman extends ConsoleProgram {
     }
     
     
-   
+    private String getWordFrom(int n) {
+    	HangmanLexicon words = new HangmanLexicon();
+   		String word = words.getWord(n);
+   		return word;
+    }
     
     private int wordAm = 10;
     private int mistakes = 8;
