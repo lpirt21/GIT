@@ -63,7 +63,7 @@ public class Hangman extends ConsoleProgram {
     
    private boolean checkChar(char ch, String word) {
 	   boolean flag = false;
-	   for(int i=0;i <word.length();i++) {
+	   for(int i=0; i<word.length();i++) {
 		   char a =word.charAt(i);
 		   if(a == ch)flag = true;
 	   }
