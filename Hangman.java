@@ -38,11 +38,10 @@ public class Hangman extends ConsoleProgram {
     			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
-    			theCh2 = Character.toUpperCase(theCh);
     		}
-    		println(checkChar(theCh2,ac));
-    		if(checkChar(theCh2,ac)){
-    			lin = newWord(theCh2,ac,lin);
+    		println(checkChar(theCh,ac));
+    		if(checkChar(theCh,ac)){
+    			lin = newWord(theCh,ac,lin);
     		}else {
     			mistakes--;
     		}
