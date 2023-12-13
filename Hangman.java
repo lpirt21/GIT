@@ -24,7 +24,7 @@ public class Hangman extends ConsoleProgram {
     	boolean notFilled = true;
     	HangmanLexicon numOfWords = new HangmanLexicon();
     	int l = numOfWords.getWordCount();
-    	int m = rgen.nextInt(0,l);
+    	int m = rgen.nextInt(0,l-1);
     	String ac = getWordFrom(m);
     	int length = ac.length();
     	println("Welcome to Hangman!");
