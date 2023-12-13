@@ -26,6 +26,7 @@ public class Hangman extends ConsoleProgram {
     	String ac = getWordFrom(m);
     	int length = ac.length();
     	char theCh ='0';
+    	char theCh2 = '0';
     	println("Welcome to Hangman!");
     	String lin = theWord(length);
     	while(true) {
@@ -37,21 +38,23 @@ public class Hangman extends ConsoleProgram {
     			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
+    			theCh2 = Character.toUpperCase(theCh);
     		}
-    		println(checkChar(theCh,ac));
-    		if(checkChar(theCh,ac)){
-    			lin = newWord(theCh,ac,lin);
+    		println(checkChar(theCh2,ac));
+    		if(checkChar(theCh2,ac)){
+    			lin = newWord(theCh2,ac,lin);
     		}else {
     			mistakes--;
     		}
-    		if(mistakes == 0)break;
+    		if(mistakes == 0) {
+    			println("You lose.");break;
+    		}
     	}
     	
     }
  
     
     private String newWord(char ch, String word,String li) {
-    	int q = 0;
     	String newWor =li;
         for(int j = 0; j<word.length();j++) {
         	char b =word.charAt(j);
