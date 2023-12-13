@@ -21,14 +21,13 @@ public class Hangman extends ConsoleProgram {
 
     
     private void game() {
-    	boolean notFilled = true;
     	HangmanLexicon numOfWords = new HangmanLexicon();
     	int l = numOfWords.getWordCount();
     	int m = rgen.nextInt(0,l-1);
     	String ac = getWordFrom(m);
     	int length = ac.length();
     	println("Welcome to Hangman!");
-    	while(notFilled) {
+    	while(true) {
     		println("The word now looks like this: " + theWord(length));
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
