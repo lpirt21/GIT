@@ -38,6 +38,7 @@ public class Hangman extends ConsoleProgram {
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
     		}
+    		println(checkChar(theCh,ac));
     		if(checkChar(theCh,ac)){
     			lin = newWord(theCh,ac);
     		}
