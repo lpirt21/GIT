@@ -44,6 +44,7 @@ public class Hangman extends ConsoleProgram {
     			println("The guess is correct.");
     			lin = newWord(theCh,ac,lin);
     		}else {
+    			println("There are no " + theCh + "'s in the word");
     			mistakes--;
     		}
     		if(mistakes == 0) {
