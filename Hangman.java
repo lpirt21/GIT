@@ -16,22 +16,8 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
     public void run() {
-    	int m = rgen.nextInt(0,wordAm);
-    	String ac = getWordFrom(m);
-    	int length = ac.length();
-    	println("Welcome to Hangman!");
-    	while(true) {
-    		println("The word now looks like this: " + theWord(length));
-    		println("You have " + mistakes + " guesses left.");
-    		String theChar = readLine("Your guess: ");
-    		while(theChar.length()>1) {
-    			println("Please enter one character");
-    		}
-    		char theCh = readChar(theChar);
-    		while(!isChar(theCh)) {
-    			println("Please enter a letter");
-    		}
-    	}
+    	String wor = getWordFrom(4);
+    	println(wor);
 	}
 
     
