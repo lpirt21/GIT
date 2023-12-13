@@ -16,11 +16,10 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
     public void run() {
-    	thegame();
-    	
+    	theGame();
 	}
 
-    private void thegame() {
+    private void theGame() {
     	HangmanLexicon numOfWords = new HangmanLexicon();
     	int l = numOfWords.getWordCount();
     	int m = rgen.nextInt(0,l-1);
@@ -31,20 +30,13 @@ public class Hangman extends ConsoleProgram {
     		println("The word now looks like this: " + theWord(length));
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
-    		while(theChar.length()>1) {
-    			println("Please enter one character");
-    			theChar = readLine("Your guess: ");
-    		}
     		char theCh = readChar(theChar);
-    		while(!isChar(theCh)) {
-    			println("Please enter a letter");
+    		while(theChar.length()>1 || !isChar(theCh)) {
+    			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
-    			while(theChar.length()>1) {
-        			println("Please enter one character");
-        			theChar = readLine("Your guess: ");
-        		}
     		}
+
     		
     	}
     }
