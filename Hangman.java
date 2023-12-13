@@ -12,9 +12,59 @@ import acm.util.*;
 import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
+	
+	RandomGenerator rgen = RandomGenerator.getInstance();
 
     public void run() {
-		/* You fill this in */
+		game();
 	}
 
+    
+    private void game() {
+    	boolean notFilled = true;
+    	HangmanLexicon numOfWords = new HangmanLexicon();
+    	int l = numOfWords.getWordCount();
+    	int m = rgen.nextInt(0,l);
+    	String ac = getWordFrom(m);
+    	int length = ac.length();
+    	println("Welcome to Hangman!");
+    	while(notFilled) {
+    		println("The word now looks like this: " + theWord(length));
+    		println("You have " + mistakes + " guesses left.");
+    		String theChar = readLine("Your guess: ");
+    		while(theChar.length()>1) {
+    			println("Please enter one character");
+    		}
+    		char theCh = readChar(theChar);
+    		while(!isChar(theCh)) {
+    			println("Please enter a letter");
+    		}
+    	}
+    }
+    
+    private boolean isChar(char th) {
+    	return Character.isLetter(th);
+    }
+    
+    private char readChar(String line) {
+    	return line.charAt(0);
+    }
+    
+    
+    private String theWord(int a) {
+    	String wor = "";
+    	for(int i=0; i<a; i++) {
+    		wor+="-";
+    	}
+    	return wor;
+    }
+    
+    private String getWordFrom(int n) {
+    	HangmanLexicon words = new HangmanLexicon();
+   		String word = words.getWord(n);
+   		return word;
+    }
+    
+    private int wordAm = 10;
+    private int mistakes = 8;
 }
