@@ -56,7 +56,6 @@ public class HangmanCanvas extends GCanvas {
 	private void addOrgan(int j) {
 		switch(j) {
 		case 0 : addHand();
-		case 1 : 
 		}
 	}
 	
