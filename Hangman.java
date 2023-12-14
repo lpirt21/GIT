@@ -62,7 +62,7 @@ public class Hangman extends ConsoleProgram {
     			theChar = readLine("Please enter one character: ");
     		}
     		theCh = readChar(theChar);
-    		while(theChar.length()>1 || !isChar(theCh) || theChar.length()==0) {
+    		while(theChar.length()>1 || !isChar(theCh)) {
     			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
     			theChar = readLine("Your guess: ");
     			theCh = readChar(theChar);
