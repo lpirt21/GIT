@@ -63,7 +63,7 @@ public class HangmanCanvas extends GCanvas {
 
 	private boolean doesNotContain(char let) {
 		for(int i =0; i<str.length(); i++) {
-			char ch = str.charAt(i)
+			char ch = str.charAt(i);
 			if(ch == let)return false;
 		}
 		return true;
