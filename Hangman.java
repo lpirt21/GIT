@@ -197,6 +197,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	rememberUsedNumbers += "" + m + ","; 
     	f++;
+    	println(f);
     	return m;
     	
     }
