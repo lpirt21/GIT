@@ -77,7 +77,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void addHead() {
-		int x = (getWidth() + BEAM_LENGTH)/2;
+		int x = getWidth()/2 - HEAD_RADIUS;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH;
 		add(new GOval(x,y,HEAD_RADIUS*2,HEAD_RADIUS*2));
 	}
