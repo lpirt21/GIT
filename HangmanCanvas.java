@@ -37,7 +37,7 @@ public class HangmanCanvas extends GCanvas {
 		String n = word;
 		label1 = new GLabel(n);
 		label1.setFont("SanSerif-50");
-		y1 = getHeight()/3 + SCAFFOLD_HEIGHT;
+		int y1 = getHeight()/3 + SCAFFOLD_HEIGHT;
 		int x = getWidth()/8;
 		add(label1,x,y1);
 	}
@@ -54,7 +54,7 @@ public class HangmanCanvas extends GCanvas {
 		}
 		GLabel label = new GLabel(str);
 		label.setFont("SanSerif-20");
-		int y2 = y1 + DIFF_BETWEEN;
+		int y2 = getHeight()/3 + SCAFFOLD_HEIGHT + DIFF_BETWEEN;
 		int x = getWidth()/8;
 		add(label,x,y2);
 		addOrgan(i);
@@ -80,7 +80,7 @@ public class HangmanCanvas extends GCanvas {
 		
 	}
 	
-	private int y1 =0;
+
 	private int i =0;
 	private GLabel label1;
 	private String str ="";
