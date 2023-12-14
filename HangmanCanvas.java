@@ -13,7 +13,16 @@ public class HangmanCanvas extends GCanvas {
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
-		/* You fill this in */
+		i=0;
+		removeAll();
+	}
+	
+	public void addScaffold() {
+		double x = getWidth()/2 - BEAM_LENGTH;
+		double y = SCAFFOLD_DIFF;
+		add(new GLine(x,y,x,y + SCAFFOLD_HEIGHT));
+		add(new GLine(x,y,x+BEAM_LENGTH,y));
+		add(new GLine(x+BEAM_LENGTH,y,x+BEAM_LENGTH,y+ROPE_LENGTH));
 	}
 
 /**
@@ -40,15 +49,25 @@ public class HangmanCanvas extends GCanvas {
 		str+=letter;
 		GLabel label = new GLabel(str);
 		add(label,100,100);
-		addOrgan();
+		addOrgan(i);
+		i++;
 	}
 
-	private void addOrgan() {
+	private void addOrgan(int j) {
+		switch(j) {
+		case 0 : addHand();
+		}
+	}
+	
+	private void addHand() {
 		
 	}
 	
+	private int i =0;
 	private GLabel label1;
 	private String str ="";
+	private static final int SCAFFOLD_DIFF = 100;
+	
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
 	private static final int BEAM_LENGTH = 144;

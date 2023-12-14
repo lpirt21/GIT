@@ -35,6 +35,7 @@ public class Hangman extends ConsoleProgram {
     	String lin = theWord(length);
     	String incorrectChars = "";
     	String correctChars ="";
+    	canvas.addScaffold();
     	while(true) {
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
