@@ -81,4 +81,10 @@ public class HangmanCanvas extends GCanvas {
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
 
+	public static final int APPLICATION_WIDTH = 400;
+	public static final int APPLICATION_HEIGHT = 600;
+	
+	private static final int WIDTH = APPLICATION_WIDTH;
+	private static final int HEIGHT = APPLICATION_HEIGHT;
+	
 }
