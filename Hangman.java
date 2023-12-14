@@ -28,7 +28,10 @@ public class Hangman extends ConsoleProgram {
 	}
 	
     public void run() {
+    	if(line.equalsIgnoreCase("Yes")) {
+    	canvas.reset();
     	theGame();
+    	}
 	}
 
     private void theGame() {
@@ -75,11 +78,15 @@ public class Hangman extends ConsoleProgram {
     		if(mistakes == 0) {
     			println("You're completely hung");
     			println("The word was " + ac);
-    			println("You lose.");break;
+    			println("You lose.");
+    			line = readLine("Do you wanna continue the game?");
+    			break;
     		}
     		if(isOver(lin)) {
     			println("You guessed the word: " + lin);
-    			println("You win.");break;
+    			println("You win.");
+    			line = readLine("Do you wanna continue the game?");
+    			break;
     		}
     	}
     	
@@ -166,4 +173,5 @@ public class Hangman extends ConsoleProgram {
     
     private HangmanCanvas canvas;
     private int mistakes = 8;
+    private String line = "";
 }
