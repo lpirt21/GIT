@@ -34,7 +34,7 @@ public class Hangman extends ConsoleProgram {
     		println("alright goodbye :)");
     	}
     	while(line.equalsIgnoreCase("yes")) {
-    		if(f == (words.getWordCount()-1)){
+    		if(f == words.getWordCount()){
     		println("Sorry there are no more words left");
     		break;
     		}
