@@ -195,7 +195,7 @@ public class Hangman extends ConsoleProgram {
     	rememberUsedNumbers += "" + m + ",";
     	}
     	while(containsNum(m)) {
-    		if(f == (words.getWordCount())){
+    		if(f == (words.getWordCount()-1)){
 	    		println("Sorry there are no more words left");
 	    		break;
 	    		}
