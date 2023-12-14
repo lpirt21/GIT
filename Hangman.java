@@ -208,7 +208,6 @@ public class Hangman extends ConsoleProgram {
     		String token = tokenizer.nextToken();
     		int wordIndex =Integer.parseInt(token);
     		println(wordIndex);
-    		println(m);
     		if(m == wordIndex) {
     			flag = true;
     		}
