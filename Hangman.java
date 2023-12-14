@@ -13,8 +13,8 @@ import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
 	
-	public static final int APPLICATION_WIDTH = 1000;
-	public static final int APPLICATION_HEIGHT = 750;
+	public static final int APPLICATION_WIDTH = 900;
+	public static final int APPLICATION_HEIGHT = 700;
 	
 	private static final int WIDTH = APPLICATION_WIDTH;
 	private static final int HEIGHT = APPLICATION_HEIGHT;
