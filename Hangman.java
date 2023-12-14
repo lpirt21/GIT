@@ -35,7 +35,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	while(line.equalsIgnoreCase("yes")) {
     		println(f);
-    		if(f == (words.getWordCount()-1)) {
+    		if(f == (words.getWordCount())) {
     			println("no words");
     			break;
     		}
