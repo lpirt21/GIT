@@ -53,7 +53,7 @@ public class HangmanCanvas extends GCanvas {
 		str+=letter;
 		}
 		GLabel label = new GLabel(str);
-		label.setFont("SanSerif-10");
+		label.setFont("SanSerif-20");
 		int y2 = y1 + DIFF_BETWEEN;
 		int x = getWidth()/8;
 		add(label,x,y2);
@@ -69,13 +69,14 @@ public class HangmanCanvas extends GCanvas {
 		return true;
 	}
 	
+	
 	private void addOrgan(int j) {
 		switch(j) {
-		case 0 : addHand();
+		case 0 : addHead();
 		}
 	}
 	
-	private void addHand() {
+	private void addHead() {
 		
 	}
 	
