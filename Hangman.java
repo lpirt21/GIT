@@ -54,6 +54,9 @@ public class Hangman extends ConsoleProgram {
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
+    		while(theChar.length()==0) {
+    			theChar = readLine("Please enter one character: ");
+    		}
     		theCh = readChar(theChar);
     		while(theChar.length()!=1 || !isChar(theCh)) {
     			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
