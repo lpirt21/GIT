@@ -29,10 +29,12 @@ public class Hangman extends ConsoleProgram {
 	
     public void run() {
     	theGame();
+    	if(line.equalsIgnoreCase("no")) {
+    		println("alright :)");
+    	}
     	while(line.equalsIgnoreCase("Yes")) {
     	canvas.reset();
     	mistakes = 8;
-    	
     	theGame();
     	}
 	}
