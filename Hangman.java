@@ -189,6 +189,9 @@ public class Hangman extends ConsoleProgram {
     
     private int differentNum(int l) {
     	int m = rgen.nextInt(0,l-1);
+    	if(f == 0) {
+    	rememberUsedNumbers += "" + m + ",";
+    	}
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
     	}
@@ -200,13 +203,11 @@ public class Hangman extends ConsoleProgram {
     
     private boolean containsNum(int m) {
     	boolean flag = false;
-    	if(rememberUsedNumbers.length() == 0) {
-    		flag = true;
-    	}
     	println(rememberUsedNumbers);
     	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
+    	String token = tokenizer.nextToken();
     	while(tokenizer.hasMoreTokens()) {
-    		String token = tokenizer.nextToken();
+    		token = tokenizer.nextToken();
     		int wordIndex =Integer.parseInt(token);
     		println(wordIndex);
     		if(m == wordIndex) {
