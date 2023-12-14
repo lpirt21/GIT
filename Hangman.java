@@ -197,13 +197,13 @@ public class Hangman extends ConsoleProgram {
     	}
     	rememberUsedNumbers += "" + m + ","; 
     	f++;
-    	println(f);
     	return m;
     	
     }
     
     private boolean containsNum(int m) {
     	boolean flag = false;
+    	println(rememberUsedNumbers);
     	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
     	while(tokenizer.hasMoreTokens()) {
     		String token = tokenizer.nextToken();
