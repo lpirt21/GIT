@@ -73,6 +73,7 @@ public class HangmanCanvas extends GCanvas {
 	private void addOrgan(int j) {
 		switch(j) {
 		case 0 : addHead();
+		case 1 : addBody();
 		}
 	}
 	
@@ -82,7 +83,11 @@ public class HangmanCanvas extends GCanvas {
 		add(new GOval(x,y,HEAD_RADIUS*2,HEAD_RADIUS*2));
 	}
 	
-	
+	private void addBody() {
+		int x = getWidth()/2;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH + 2*HEAD_RADIUS;
+		add(new GLine(x,y,x,y+BODY_LENGTH));
+	}
 
 	private int i =0;
 	private GLabel label1;
