@@ -34,6 +34,10 @@ public class Hangman extends ConsoleProgram {
     		println("alright goodbye :)");
     	}
     	while(line.equalsIgnoreCase("yes")) {
+    		if(f == (words.getWordCount()-1)){
+    		println("Sorry there are no more words left");
+    		break;
+    		}
     	canvas.reset();
     	mistakes = 8;
     	theGame();
@@ -82,6 +86,7 @@ public class Hangman extends ConsoleProgram {
     			canvas.noteIncorrectGuess(c);
     			}
     		}
+
     		if(mistakes == 0) {
     			println("You're completely hung");
     			println("The word was " + ac);
@@ -194,8 +199,6 @@ public class Hangman extends ConsoleProgram {
     	}
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
-    		if(f == (words.getWordCount()-1))break;
-    		
     	}
     	rememberUsedNumbers += "" + m + ","; 
     	f++;
