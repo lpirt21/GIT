@@ -18,8 +18,8 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	public void addScaffold() {
-		double x = WIDTH/2 - BEAM_LENGTH;
-		double y = (HEIGHT - SCAFFOLD_HEIGHT)/4;
+		double x = getWidth()/2 - BEAM_LENGTH;
+		double y = (getHeight() - SCAFFOLD_HEIGHT)/4;
 		add(new GLine(x,y,x,y + SCAFFOLD_HEIGHT));
 		add(new GLine(x,y,x+BEAM_LENGTH,y));
 		add(new GLine(x+BEAM_LENGTH,y,x+BEAM_LENGTH,y+ROPE_LENGTH));
@@ -81,10 +81,6 @@ public class HangmanCanvas extends GCanvas {
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
 
-	public static final int APPLICATION_WIDTH = 500;
-	public static final int APPLICATION_HEIGHT = 800;
-	
-	private static final int WIDTH = APPLICATION_WIDTH;
-	private static final int HEIGHT = APPLICATION_HEIGHT;
+
 	
 }
