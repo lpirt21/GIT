@@ -62,8 +62,8 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 	private boolean doesNotContain(char let) {
-		for(int i =0; i<str.length(); i++) {
-			char ch = str.charAt(i);
+		for(int k =0; k<str.length(); k++) {
+			char ch = str.charAt(k);
 			if(ch == let)return false;
 		}
 		return true;
@@ -77,8 +77,11 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void addHead() {
-		
+		int x = (getWidth() + BEAM_LENGTH)/2;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH;
+		add(new GOval(x,y,HEAD_RADIUS*2,HEAD_RADIUS*2));
 	}
+	
 	
 
 	private int i =0;
