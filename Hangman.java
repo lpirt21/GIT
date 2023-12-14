@@ -14,7 +14,7 @@ import java.awt.*;
 public class Hangman extends ConsoleProgram {
 	
 	
-	private static final int WIDTH = 1000;
+	private static final int WIDTH = 1300;
 	private static final int HEIGHT = 600;
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
