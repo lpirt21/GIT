@@ -177,7 +177,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     private String getWordFrom() {
-    	HangmanLexicon words = new HangmanLexicon();
+    	words = new HangmanLexicon();
         int l = words.getWordCount();
     	int n = differentNum(l);
    		String word = words.getWord(n);
