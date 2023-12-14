@@ -58,7 +58,6 @@ public class HangmanCanvas extends GCanvas {
 		int x = getWidth()/8;
 		add(label,x,y2);
 		addOrgan(i);
-		i++;
 	}
 
 	private boolean doesNotContain(char let) {
