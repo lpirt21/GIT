@@ -19,7 +19,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	public void addScaffold() {
 		double x = getWidth()/2 - BEAM_LENGTH;
-		double y = SCAFFOLD_DIFF;
+		double y = (getHeight() - SCAFFOLD_HEIGHT)/2;
 		add(new GLine(x,y,x,y + SCAFFOLD_HEIGHT));
 		add(new GLine(x,y,x+BEAM_LENGTH,y));
 		add(new GLine(x+BEAM_LENGTH,y,x+BEAM_LENGTH,y+ROPE_LENGTH));
@@ -56,6 +56,7 @@ public class HangmanCanvas extends GCanvas {
 	private void addOrgan(int j) {
 		switch(j) {
 		case 0 : addHand();
+		case 1 : 
 		}
 	}
 	
