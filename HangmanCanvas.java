@@ -111,27 +111,27 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void addLeftLeg() {
 		int x = getWidth()/2 - HIP_WIDTH;
-		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS;
 		add(new GLine(x,y,x+HIP_WIDTH,y));
 		add(new GLine(x,y,x,y+LEG_LENGTH));
 	}
 	
 	private void addRightLeg() {
 		int x = getWidth()/2 + HIP_WIDTH;
-		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS;
 		add(new GLine(x,y,x-HIP_WIDTH,y));
 		add(new GLine(x,y,x,y+LEG_LENGTH));
 	}
 	
 	private void addLeftFoot() {
 		int x = getWidth()/2 - HIP_WIDTH;
-		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD + LEG_LENGTH;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS + LEG_LENGTH;
 		add(new GLine(x,y,x-FOOT_LENGTH,y));
 	}
 	
 	private void addRightFoot() {
 		int x = getWidth()/2 - HIP_WIDTH;
-		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD + LEG_LENGTH;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS + LEG_LENGTH;
 		add(new GLine(x,y,x+FOOT_LENGTH,y));
 	}
 	
