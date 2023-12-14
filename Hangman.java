@@ -194,14 +194,14 @@ public class Hangman extends ConsoleProgram {
     
     private int differentNum(int l) {
     	int m = rgen.nextInt(0,l-1);
-    	if(f == 0) {
+    	f++;
+    	if(f == 1) {
     	rememberUsedNumbers += "" + m + ",";
     	}
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
     	}
     	rememberUsedNumbers += "" + m + ","; 
-    	f++;
     	return m;
     	
     }
