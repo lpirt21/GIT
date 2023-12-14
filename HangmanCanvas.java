@@ -48,7 +48,6 @@ public class HangmanCanvas extends GCanvas {
 	public void noteIncorrectGuess(char letter) {
 		str+=letter;
 		GLabel label = new GLabel(str);
-		double x = 
 		add(label,100,100);
 		addOrgan(i);
 		i++;
