@@ -41,7 +41,6 @@ public class Hangman extends ConsoleProgram {
 	}
 
     private void theGame() {
-    	HangmanLexicon numOfWords = new HangmanLexicon();
     	String ac = getWordFrom();
     	int length = ac.length();
     	char theCh ='0';
@@ -190,18 +189,14 @@ public class Hangman extends ConsoleProgram {
     
     private int differentNum(int l) {
     	int m = rgen.nextInt(0,l-1);
-    	f++;
-    	if(f == 1) {
+    	if(f == 0) {
     	rememberUsedNumbers += "" + m + ",";
     	}
     	while(containsNum(m)) {
-    		if(f == (words.getWordCount()-1)){
-	    		println("Sorry there are no more words left");
-	    		break;
-	    		}
     		m = rgen.nextInt(0,l-1);
     	}
     	rememberUsedNumbers += "" + m + ","; 
+    	f++;
     	return m;
     	
     }
