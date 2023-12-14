@@ -34,6 +34,11 @@ public class Hangman extends ConsoleProgram {
     		println("alright goodbye :)");
     	}
     	while(line.equalsIgnoreCase("yes")) {
+    		println(f);
+    		if(f == (words.getWordCount()-1)) {
+    			println("no words");
+    			break;
+    		}
        	canvas.reset();
     	mistakes = 8;
     	theGame();
@@ -51,10 +56,6 @@ public class Hangman extends ConsoleProgram {
     	canvas.addScaffold();
     	while(true) {
     		println(f);
-    		if(f == (words.getWordCount()-1)) {
-    			println("no words");
-    			break;
-    		}
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
