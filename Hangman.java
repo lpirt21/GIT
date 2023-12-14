@@ -179,7 +179,6 @@ public class Hangman extends ConsoleProgram {
     private String getWordFrom() {
     	HangmanLexicon words = new HangmanLexicon();
         int l = words.getWordCount();
-    	rememberUsedNumbers += "" + l + ","; 
     	int n = differentNum(l);
    		String word = words.getWord(n);
    		return word;
@@ -190,6 +189,7 @@ public class Hangman extends ConsoleProgram {
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
     	}
+    	rememberUsedNumbers += "" + m + ","; 
     	return m;
     }
     
