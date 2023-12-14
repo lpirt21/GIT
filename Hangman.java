@@ -29,6 +29,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
     public void run() {
+    	println("Welcome to Hangman!");
     	theGame();
     	if(line.equalsIgnoreCase("no")) {
     		println("alright goodbye :)");
@@ -48,7 +49,6 @@ public class Hangman extends ConsoleProgram {
     	String ac = getWordFrom();
     	int length = ac.length();
     	char theCh ='0';
-    	println("Welcome to Hangman!");
     	String lin = theWord(length);
     	String incorrectChars = "";
     	String correctChars ="";
