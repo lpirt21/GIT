@@ -34,11 +34,7 @@ public class Hangman extends ConsoleProgram {
     		println("alright goodbye :)");
     	}
     	while(line.equalsIgnoreCase("yes")) {
-    		if(f == (words.getWordCount()-1)){
-    		println("Sorry there are no more words left");
-    		break;
-    		}
-    	canvas.reset();
+       	canvas.reset();
     	mistakes = 8;
     	theGame();
     	}
@@ -91,6 +87,11 @@ public class Hangman extends ConsoleProgram {
     			println("You're completely hung");
     			println("The word was " + ac);
     			println("You lose.");
+    			if(f == (words.getWordCount())){
+    	    		println("Sorry there are no more words left");
+    	    		break;
+    	    		}
+
     			line = readLine("Do you wanna continue the game?\n"
     					+ "enter yes or no:");
     			while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
@@ -101,6 +102,11 @@ public class Hangman extends ConsoleProgram {
     		if(isOver(lin)) {
     			println("You guessed the word: " + lin);
     			println("You win.");
+    			if(f == (words.getWordCount())){
+    	    		println("Sorry there are no more words left");
+    	    		break;
+    	    		}
+
     			line = readLine("Do you wanna continue the game?\n"
     					+ "enter yes or no:");
     			while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
