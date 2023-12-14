@@ -186,12 +186,17 @@ public class Hangman extends ConsoleProgram {
     
     private int differentNum(int l) {
     	int m = rgen.nextInt(0,l-1);
-    	rememberUsedNumbers += "" + m + ","; 
+    	if(f == 0) {
+    	rememberUsedNumbers += "" + m + ",";
+    	}
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
+    		if(f == words.getWordCount())break;
     	}
     	rememberUsedNumbers += "" + m + ","; 
+    	f++;
     	return m;
+    	
     }
     
     private boolean containsNum(int m) {
@@ -209,7 +214,7 @@ public class Hangman extends ConsoleProgram {
     	return flag;
     }
     
-    
+    private int f=0;
     private String rememberUsedNumbers = "";
     private HangmanLexicon words;
     private HangmanCanvas canvas;
