@@ -195,7 +195,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     private boolean containsNum(int m) {
-    	boolean flag = true;
+    	boolean flag = false;
     	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
     	while(tokenizer.hasMoreTokens()) {
     		String token = tokenizer.nextToken();
@@ -203,7 +203,7 @@ public class Hangman extends ConsoleProgram {
     		println(wordIndex);
     		println(m);
     		if(m == wordIndex) {
-    			flag = false;
+    			flag = true;
     		}
     	}
     	return flag;
