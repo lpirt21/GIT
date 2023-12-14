@@ -194,7 +194,8 @@ public class Hangman extends ConsoleProgram {
     	}
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
-    		if(f == words.getWordCount())break;
+    		if(f == (words.getWordCount()-1))break;
+    		
     	}
     	rememberUsedNumbers += "" + m + ","; 
     	f++;
