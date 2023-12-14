@@ -82,13 +82,21 @@ public class Hangman extends ConsoleProgram {
     			println("You're completely hung");
     			println("The word was " + ac);
     			println("You lose.");
-    			line = readLine("Do you wanna continue the game?");
+    			line = readLine("Do you wanna continue the game?\n"
+    					+ "enter yes or no:");
+    			while(!line.equalsIgnoreCase("yes") || !line.equalsIgnoreCase("no")){
+    				line = readLine("Please enter yes or no:");
+    			}
     			break;
     		}
     		if(isOver(lin)) {
     			println("You guessed the word: " + lin);
     			println("You win.");
-    			line = readLine("Do you wanna continue the game?");
+    			line = readLine("Do you wanna continue the game?\n"
+    					+ "enter yes or no:");
+    			while(!line.equalsIgnoreCase("yes") || !line.equalsIgnoreCase("no")){
+    				line = readLine("Please enter yes or no:");
+    			}
     			break;
     		}
     	}
