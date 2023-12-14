@@ -10,6 +10,7 @@ import acm.program.*;
 import acm.util.*;
 
 import java.awt.*;
+import java.util.StringTokenizer;
 
 public class Hangman extends ConsoleProgram {
 	
@@ -32,7 +33,7 @@ public class Hangman extends ConsoleProgram {
     	if(line.equalsIgnoreCase("no")) {
     		println("alright goodbye :)");
     	}
-    	while(line.equalsIgnoreCase("Yes")) {
+    	while(line.equalsIgnoreCase("yes")) {
     	canvas.reset();
     	mistakes = 8;
     	theGame();
@@ -41,9 +42,7 @@ public class Hangman extends ConsoleProgram {
 
     private void theGame() {
     	HangmanLexicon numOfWords = new HangmanLexicon();
-    	int l = numOfWords.getWordCount();
-    	int m = rgen.nextInt(0,l-1);
-    	String ac = getWordFrom(m);
+    	String ac = getWordFrom();
     	int length = ac.length();
     	char theCh ='0';
     	println("Welcome to Hangman!");
@@ -102,7 +101,6 @@ public class Hangman extends ConsoleProgram {
     			break;
     		}
     	}
-    	
     }
     
     public String addIncorrectChar(char newChar,String original) {
@@ -178,12 +176,39 @@ public class Hangman extends ConsoleProgram {
     	return wor;
     }
     
-    private String getWordFrom(int n) {
+    private String getWordFrom() {
     	HangmanLexicon words = new HangmanLexicon();
+        int l = words.getWordCount();
+    	rememberUsedNumbers += "" + l + ","; 
+    	int n = differentNum(l);
    		String word = words.getWord(n);
    		return word;
     }
     
+    private int differentNum(int l) {
+    	int m = rgen.nextInt(0,l-1);
+    	while(containsNum(m)) {
+    		m = rgen.nextInt(0,l-1);
+    	}
+    	return m;
+    }
+    
+    private boolean containsNum(int m) {
+    	boolean flag = true;
+    	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
+    	while(tokenizer.hasMoreTokens()) {
+    		String token = tokenizer.nextToken();
+    		int wordIndex =Integer.parseInt(token);
+    		if(m == wordIndex) {
+    			flag = false;
+    		}
+    	}
+    	return flag;
+    }
+    
+    
+    private String rememberUsedNumbers = "";
+    private HangmanLexicon words;
     private HangmanCanvas canvas;
     private int mistakes = 8;
     private String line = "";
