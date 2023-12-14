@@ -51,10 +51,6 @@ public class Hangman extends ConsoleProgram {
     	String correctChars ="";
     	canvas.addScaffold();
     	while(true) {
-    		if(f == (words.getWordCount())){
-	    		println("Sorry there are no more words left");
-	    		break;
-	    		}
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
@@ -199,6 +195,10 @@ public class Hangman extends ConsoleProgram {
     	rememberUsedNumbers += "" + m + ",";
     	}
     	while(containsNum(m)) {
+    		if(f == (words.getWordCount())){
+	    		println("Sorry there are no more words left");
+	    		break;
+	    		}
     		m = rgen.nextInt(0,l-1);
     	}
     	rememberUsedNumbers += "" + m + ","; 
