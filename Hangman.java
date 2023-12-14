@@ -31,6 +31,7 @@ public class Hangman extends ConsoleProgram {
     	theGame();
     	if(line.equalsIgnoreCase("Yes")) {
     	canvas.reset();
+    	mistakes = 8;
     	theGame();
     	}
 	}
