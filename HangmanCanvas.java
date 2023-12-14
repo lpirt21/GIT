@@ -74,6 +74,7 @@ public class HangmanCanvas extends GCanvas {
 		switch(j) {
 		case 0 : addHead();break;
 		case 1 : addBody();break;
+		case 2 : addLeftHand();break;
 		}
 	}
 	
@@ -89,6 +90,12 @@ public class HangmanCanvas extends GCanvas {
 		add(new GLine(x,y,x,y+BODY_LENGTH));
 	}
 
+	private void addLeftHand() {
+		int x = getWidth()/2 - UPPER_ARM_LENGTH;
+		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD;
+		add(new GLine(x,y,x+UPPER_ARM_LENGTH,y));
+		add(new GLine(x,y,x+LOWER_ARM_LENGTH,y));
+	}
 	
 	private int i =0;
 	private GLabel label1;
