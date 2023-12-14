@@ -49,7 +49,9 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
+		if(doesNotContain(letter)) {
 		str+=letter;
+		}
 		GLabel label = new GLabel(str);
 		label.setFont("SanSerif-10");
 		int y2 = y1 + DIFF_BETWEEN;
@@ -59,6 +61,14 @@ public class HangmanCanvas extends GCanvas {
 		i++;
 	}
 
+	private boolean doesNotContain(char let) {
+		for(int i =0; i<str.length(); i++) {
+			char ch = str.charAt(i)
+			if(ch == let)return false;
+		}
+		return true;
+	}
+	
 	private void addOrgan(int j) {
 		switch(j) {
 		case 0 : addHand();
