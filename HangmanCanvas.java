@@ -66,7 +66,7 @@ public class HangmanCanvas extends GCanvas {
 	private int i =0;
 	private GLabel label1;
 	private String str ="";
-	private static final int SCAFFOLD_DIFF = 100;
+	private static final int SCAFFOLD_DIFF = 40;
 	
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
