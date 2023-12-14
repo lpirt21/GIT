@@ -30,7 +30,7 @@ public class Hangman extends ConsoleProgram {
     public void run() {
     	theGame();
     	if(line.equalsIgnoreCase("no")) {
-    		println("alright :)");
+    		println("alright goodbye :)");
     	}
     	while(line.equalsIgnoreCase("Yes")) {
     	canvas.reset();
@@ -86,7 +86,7 @@ public class Hangman extends ConsoleProgram {
     			println("You lose.");
     			line = readLine("Do you wanna continue the game?\n"
     					+ "enter yes or no:");
-    			while(!line.equalsIgnoreCase("yes") || !line.equalsIgnoreCase("no")){
+    			while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
     				line = readLine("Please enter yes or no:");
     			}
     			break;
@@ -96,7 +96,7 @@ public class Hangman extends ConsoleProgram {
     			println("You win.");
     			line = readLine("Do you wanna continue the game?\n"
     					+ "enter yes or no:");
-    			while(!line.equalsIgnoreCase("yes") || !line.equalsIgnoreCase("no")){
+    			while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
     				line = readLine("Please enter yes or no:");
     			}
     			break;
