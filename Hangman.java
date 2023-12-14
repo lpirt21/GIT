@@ -52,7 +52,8 @@ public class Hangman extends ConsoleProgram {
     	while(true) {
     		println(f);
     		if(f == (words.getWordCount()-1)) {
-    			println("no words")break;
+    			println("no words");
+    			break;
     		}
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
