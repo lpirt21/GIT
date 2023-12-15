@@ -19,8 +19,8 @@ public class HangmanLexicon {
 	private ArrayList <String> theWords;
 	
 	public HangmanLexicon(){
-		String content = fileName;
-		theWords= words(content);
+		String name = fileName;
+		theWords= words(name);
 	}
 	
 	private ArrayList<String> words(String fileName) {
