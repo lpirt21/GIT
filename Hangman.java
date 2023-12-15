@@ -29,8 +29,6 @@ public class Hangman extends ConsoleProgram {
 	}
 	
     public void run() {
-    	HangmanLexicon ne = new HangmanLexicon();
-    	println(ne.getWord(0));
     	println("Welcome to Hangman!");
     	theGame();
     	if(line.equalsIgnoreCase("no")) {
@@ -201,7 +199,6 @@ public class Hangman extends ConsoleProgram {
     		m = rgen.nextInt(0,l-1);
     	}
     	rememberUsedNumbers += "" + m + ","; 
-    	println(f);
     	f++;
     	return m;
     	
@@ -209,7 +206,6 @@ public class Hangman extends ConsoleProgram {
     
     private boolean containsNum(int m) {
     	boolean flag = false;
-    	println(rememberUsedNumbers);
     	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
     	String token = tokenizer.nextToken();
     	while(tokenizer.hasMoreTokens()) {
