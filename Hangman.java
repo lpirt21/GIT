@@ -31,8 +31,9 @@ public class Hangman extends ConsoleProgram {
     public void run() {
     	println("Welcome to Hangman!");
     	theGame();
-    	if(line.equalsIgnoreCase("no")) {
+    	while(line.equalsIgnoreCase("no")) {
     		println("alright goodbye!");
+    		break;
     	}
     	while(line.equalsIgnoreCase("yes")) {
     		if(f == (words.getWordCount())) {
