@@ -31,9 +31,7 @@ public class Hangman extends ConsoleProgram {
     public void run() {
     	println("Welcome to Hangman!");
     	theGame();
-    	if(line.equalsIgnoreCase("no")) {
-    		println("alright goodbye!");
-    	}
+    	
     	while(line.equalsIgnoreCase("yes")) {
     		if(f == (words.getWordCount())) {
     			println("Sorry there are no words left");
@@ -106,6 +104,10 @@ public class Hangman extends ConsoleProgram {
     			}
     			break;
     		}
+    		if(line.equalsIgnoreCase("no")) {
+        		println("alright goodbye!");
+        		break;
+        	}
     	}
     }
     
