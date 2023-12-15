@@ -20,7 +20,7 @@ public class HangmanLexicon {
 	
 	public HangmanLexicon(){
 		String content = fileName;
-		ArrayList<String> theWords= words(content);
+		theWords= words(content);
 	}
 	
 	private ArrayList<String> words(String fileName) {
