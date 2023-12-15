@@ -31,9 +31,8 @@ public class Hangman extends ConsoleProgram {
     public void run() {
     	println("Welcome to Hangman!");
     	theGame();
-    	while(line.equalsIgnoreCase("no")) {
+    	if(line.equalsIgnoreCase("no")) {
     		println("alright goodbye!");
-    		break;
     	}
     	while(line.equalsIgnoreCase("yes")) {
     		if(f == (words.getWordCount())) {
@@ -212,7 +211,6 @@ public class Hangman extends ConsoleProgram {
     	while(tokenizer.hasMoreTokens()) {
     		token = tokenizer.nextToken();
     		int wordIndex =Integer.parseInt(token);
-    		println(wordIndex);
     		if(m == wordIndex) {
     			flag = true;
     		}
