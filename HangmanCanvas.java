@@ -18,6 +18,7 @@ public class HangmanCanvas extends GCanvas {
 		removeAll();
 	}
 	
+	
 	public void addScaffold() {
 		int x = getWidth()/2 - BEAM_LENGTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3;

@@ -29,10 +29,12 @@ public class Hangman extends ConsoleProgram {
 	}
 	
     public void run() {
+    	HangmanLexicon ne = new HangmanLexicon();
+    	println(ne.getWord(0));
     	println("Welcome to Hangman!");
     	theGame();
     	if(line.equalsIgnoreCase("no")) {
-    		println("alright goodbye :)");
+    		println("alright goodbye!");
     	}
     	while(line.equalsIgnoreCase("yes")) {
     		if(f == (words.getWordCount())) {
@@ -54,7 +56,6 @@ public class Hangman extends ConsoleProgram {
     	String correctChars ="";
     	canvas.addScaffold();
     	while(true) {
-    		println(f);
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
     		String theChar = readLine("Your guess: ");
@@ -86,7 +87,6 @@ public class Hangman extends ConsoleProgram {
     			canvas.noteIncorrectGuess(c);
     			}
     		}
-
     		if(mistakes == 0) {
     			println("You're completely hung");
     			println("The word was " + ac);
