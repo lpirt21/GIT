@@ -186,21 +186,18 @@ public class Hangman extends ConsoleProgram {
     }
     
     
-    //checks if the string contains the char.
+    //checks if the string contains the char and returns true if it does.
    private boolean checkChar(char ch, String word) {
 	   boolean flag = false;
 	   String word1 = "";
 	   //converts the whole string to uppercase letters.
    		for(int s =0; s<word.length();s++) {
-   		char ch2 = word.charAt(s);
-   		char ch3 = Character.toUpperCase(word.charAt(s));
-   		word1+=ch3;
+   		char ch1 = Character.toUpperCase(word.charAt(s));
+   		word1+=ch1;
    		}
-   		
-   		char ch4 = Character.toUpperCase(ch);
    		for(int i=0; i<word1.length();i++) {
 		   char a =word1.charAt(i);
-		   if(a == ch4)flag = true;
+		   if(a == Character.toUpperCase(ch))flag = true;
 	   }
 	   return flag;
    }
