@@ -33,7 +33,6 @@ public class Hangman extends ConsoleProgram {
     
     private void playTheGame() {
     	println("Welcome to Hangman!");
-     	canvas.addScaffold();
     	theGame();
     	while(line.equalsIgnoreCase("yes")) {
     		if(f == (words.getWordCount())) {
@@ -47,6 +46,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     private void theGame() {
+    	canvas.addScaffold();
     	String ac = getWordFrom();
     	int length = ac.length();
     	char theCh ='0';
