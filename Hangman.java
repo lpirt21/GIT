@@ -13,12 +13,7 @@ import java.awt.*;
 import java.util.StringTokenizer;
 
 public class Hangman extends ConsoleProgram {
-	
-	public static final int APPLICATION_WIDTH = 900;
-	public static final int APPLICATION_HEIGHT = 700;
-	
-	private static final int WIDTH = APPLICATION_WIDTH;
-	private static final int HEIGHT = APPLICATION_HEIGHT;
+
 	
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
@@ -39,12 +34,12 @@ public class Hangman extends ConsoleProgram {
     	 * playing, if the users answer is yes this while loop makes sure
     	 * the game continues.  
     	**/
-    	while(line.equalsIgnoreCase("yes")) {
+    	while(answer.equalsIgnoreCase("yes")) {
     		/*
     		 * if the words on the list end at some point this part makes sure
     		 * to make it known to the user that the game can't continue.
         	**/
-    		if(f == (words.getWordCount())) {
+    		if(numberOfUsedWords == (words.getWordCount())) {
     			println("Sorry there are no more words left");
     			break;
     		}
@@ -123,7 +118,7 @@ public class Hangman extends ConsoleProgram {
     		}
     	}
     	//if the user answers that they don't want to continue playing stops the game. 
-    	if(line.equalsIgnoreCase("no")) {
+    	if(answer.equalsIgnoreCase("no")) {
     		println("alright goodbye!");
     	}
     }
@@ -142,10 +137,10 @@ public class Hangman extends ConsoleProgram {
      *  until they answer with yes or no. 
      */
     private void askQuestion() {
-    	line = readLine("Do you wanna continue the game?\n"
+    	answer = readLine("Do you wanna continue the game?\n"
 				+ "enter yes or no:");
-		while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
-			line = readLine("Please enter yes or no:");
+		while(!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")){
+			answer = readLine("Please enter yes or no:");
 		}
     }
     
@@ -224,30 +219,48 @@ public class Hangman extends ConsoleProgram {
     	}
     	return wor;
     }
-    
+   
+    //gets random word from the list of words.
     private String getWordFrom() {
     	words = new HangmanLexicon();
         int l = words.getWordCount();
-    	int n = differentNum(l);
+    	int n = differentNum(l);//makes sure each word is different by not repeating the index of the word.
    		String word = words.getWord(n);
    		return word;
     }
     
     
+    /*
+     * gets random number but also makes sure that number has not been used already
+     * so all randomly picked words will be different. 
+     */
     private int differentNum(int l) {
     	int m = rgen.nextInt(0,l-1);
-    	if(f == 0) {
+    	if(numberOfUsedWords == 0) {
     	rememberUsedNumbers += "" + m + ",";
     	}
+    	/*
+    	 * this while loop makes sure that if the random selected number has already been used 
+    	 * the number will change to the different random number until the unused number comes up. 
+    	 */
     	while(containsNum(m)) {
     		m = rgen.nextInt(0,l-1);
     	}
-    	rememberUsedNumbers += "" + m + ","; 
-    	f++;
+    	/*
+    	 * adds the used number to the string of used numbers and adds a colon between each one
+    	 * so it will be able to find each number by stringtokenizer letter. 
+    	 */
+    	rememberUsedNumbers += "" + m + ",";
+    	/*
+    	 * counts how many times has user played the game therefore how many
+    	 * words has been used from the list so in case where all the words has been
+    	 * used the program will stop and inform the user.
+    	 */
+    	numberOfUsedWords++;
     	return m;
-    	
     }
     
+    //returns true if the number has been used already;
     private boolean containsNum(int m) {
     	boolean flag = false;
     	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
@@ -262,10 +275,18 @@ public class Hangman extends ConsoleProgram {
     	return flag;
     }
     
-    private int f=0;
+    public static final int APPLICATION_WIDTH = 900;
+	public static final int APPLICATION_HEIGHT = 700;
+	
+	private static final int WIDTH = APPLICATION_WIDTH;
+	private static final int HEIGHT = APPLICATION_HEIGHT;
+    
+    private int numberOfUsedWords=0;
     private String rememberUsedNumbers = "";
     private HangmanLexicon words;
     private HangmanCanvas canvas;
+    //the amount of mistakes the user is allowed to make
     private int mistakes = 8;
-    private String line = "";
+    //the answer to yes or no question
+    private String answer = "";
 }
