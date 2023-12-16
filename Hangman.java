@@ -10,12 +10,12 @@ import acm.program.*;
 import acm.util.*;
 
 import java.awt.*;
+
 import java.util.StringTokenizer;
 
 public class Hangman extends ConsoleProgram {
 
-	
-	RandomGenerator rgen = RandomGenerator.getInstance();
+    RandomGenerator rgen = RandomGenerator.getInstance();
 
 	public void init() {
 		canvas = new HangmanCanvas();
@@ -254,16 +254,17 @@ public class Hangman extends ConsoleProgram {
     	 * so it will be able to find each number by stringtokenizer letter. 
     	 */
     	rememberUsedNumbers += "" + m + ",";
+    	
     	/*
-    	 * counts how many times has user played the game therefore how many
-    	 * words has been used from the list so in case where all the words has been
-    	 * used the program will stop and inform the user.
+    	 * counts how many times has user played the game therefore how many words has been used from the list so  
+    	 * in the case where all the words has been used (if we use the shorter lexicon all words will be used eventually)
+    	 * the program will stop and inform the user.
     	 */
     	numberOfUsedWords++;
     	return m;
     }
     
-    //returns true if the number has been used already;
+    //returns true if that number has been used already;
     private boolean containsNum(int m) {
     	boolean flag = false;
     	StringTokenizer tokenizer = new StringTokenizer(rememberUsedNumbers, ",");
@@ -278,8 +279,10 @@ public class Hangman extends ConsoleProgram {
     	return flag;
     }
     
-    //changes the size of the console so the hangman illustration words 
-    //and incorrectly guessed letter will be able to fit on canvas.
+    /*
+     * changes the size of the console so the hangman illustration words
+     * and incorrectly guessed letter will be able to fit on canvas. 
+     */
     public static final int APPLICATION_WIDTH = 900;
 	public static final int APPLICATION_HEIGHT = 700;
 	
@@ -292,3 +295,4 @@ public class Hangman extends ConsoleProgram {
     //the answer to yes or no question
     private String answer = "";
 }
+
