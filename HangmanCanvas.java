@@ -14,11 +14,11 @@ public class HangmanCanvas extends GCanvas {
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
 		i=0;
-		str ="";
+		incorrectLetters ="";
 		removeAll();
 	}
 	
-	
+	//adds scaffold to canvas
 	public void addScaffold() {
 		int x = getWidth()/2 - BEAM_LENGTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3;
@@ -51,10 +51,11 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
+		//if the incorrect letter is not already displayed than adds it. 
 		if(doesNotContain(letter)) {
-		str+=letter;
+		incorrectLetters+=letter;
 		}
-		GLabel label = new GLabel(str);
+		GLabel label = new GLabel(incorrectLetters);
 		label.setFont("SanSerif-15");
 		int y2 = getHeight()/3 +  6*SCAFFOLD_HEIGHT/7 + DIFF_BETWEEN;
 		int x = getWidth()/8;
@@ -62,10 +63,14 @@ public class HangmanCanvas extends GCanvas {
 		addOrgan(i);
 		i++;
 	}
-
+	
+	/*
+	 * checks if the character is already part of the string and returns true if it does 
+	 * so it does not add incorrectly guessed letter twice in the string. 
+	 */
 	private boolean doesNotContain(char let) {
-		for(int k =0; k<str.length(); k++) {
-			char ch = str.charAt(k);
+		for(int k =0; k<incorrectLetters.length(); k++) {
+			char ch = incorrectLetters.charAt(k);
 			if(ch == let)return false;
 		}
 		return true;
@@ -139,7 +144,8 @@ public class HangmanCanvas extends GCanvas {
 	
 	private int i =0;
 	private GLabel label1;
-	private String str ="";
+	private String incorrectLetters ="";
+	//the difference between the incorrect letters label and the word displayed label.
 	private static int DIFF_BETWEEN = 30;
 	
 /* Constants for the simple version of the picture (in pixels) */

@@ -275,6 +275,8 @@ public class Hangman extends ConsoleProgram {
     	return flag;
     }
     
+    //changes the size of the console so the hangman illustration words 
+    //and incorrectly guessed letter will be able to fit on canvas.
     public static final int APPLICATION_WIDTH = 900;
 	public static final int APPLICATION_HEIGHT = 700;
 	

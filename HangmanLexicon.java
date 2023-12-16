@@ -23,6 +23,7 @@ public class HangmanLexicon {
 		theWords= words(name);
 	}
 	
+	//reads each line and adds each read word in an arraylist.
 	private ArrayList<String> words(String fileName) {
 		ArrayList<String> result = new ArrayList<>();
 		try {
