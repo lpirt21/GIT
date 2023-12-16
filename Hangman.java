@@ -275,6 +275,9 @@ public class Hangman extends ConsoleProgram {
     	return flag;
     }
     
+    public static final int APPLICATION_WIDTH = 900;
+	public static final int APPLICATION_HEIGHT = 700;
+	
 	private static final int WIDTH = 900;
 	private static final int HEIGHT = 700;
     
