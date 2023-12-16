@@ -28,10 +28,10 @@ public class HangmanLexicon {
 		try {
 			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while (true) {
-				 // 1. read current line
+				// reads current line
 				String line = rd.readLine();
 				
-				if (line == null) { // 2. if (line == null) => there are no more lines to read
+				if (line == null) {
 					break;
 				}
 				result.add(line);

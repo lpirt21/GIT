@@ -23,7 +23,6 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 
 	public void init() {
-		
 		canvas = new HangmanCanvas();
 		add(canvas);
 	}
@@ -96,11 +95,7 @@ public class Hangman extends ConsoleProgram {
     		if(isOver(lin)) {
     			println("You guessed the word: " + lin);
     			println("You win.");
-    			line = readLine("Do you wanna continue the game?\n"
-    					+ "enter yes or no:");
-    			while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
-    				line = readLine("Please enter yes or no:");
-    			}
+    			askQuestion();
     			break;
     		}
     	}
@@ -109,12 +104,22 @@ public class Hangman extends ConsoleProgram {
     	}
     }
     
-    public String addIncorrectChar(char newChar,String original) {
+    
+    private String addIncorrectChar(char newChar,String original) {
     	String res = "";
     	if(!checkChar(newChar,original)) {
     		res+=Character.toUpperCase(newChar);
     	}
     	return res;
+    }
+    
+    
+    private void askQuestion() {
+    	line = readLine("Do you wanna continue the game?\n"
+				+ "enter yes or no:");
+		while(!line.equalsIgnoreCase("yes") && !line.equalsIgnoreCase("no")){
+			line = readLine("Please enter yes or no:");
+		}
     }
     
     private boolean isOver(String l) {
