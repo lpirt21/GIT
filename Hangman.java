@@ -10,12 +10,12 @@ import acm.program.*;
 import acm.util.*;
 
 import java.awt.*;
-
 import java.util.StringTokenizer;
 
 public class Hangman extends ConsoleProgram {
 
-    RandomGenerator rgen = RandomGenerator.getInstance();
+	
+	RandomGenerator rgen = RandomGenerator.getInstance();
 
 	public void init() {
 		canvas = new HangmanCanvas();
@@ -281,7 +281,7 @@ public class Hangman extends ConsoleProgram {
     
     /*
      * changes the size of the console so the hangman illustration words
-     * and incorrectly guessed letter will be able to fit on canvas. 
+     *  
      */
     public static final int APPLICATION_WIDTH = 900;
 	public static final int APPLICATION_HEIGHT = 700;
@@ -295,4 +295,3 @@ public class Hangman extends ConsoleProgram {
     //the answer to yes or no question
     private String answer = "";
 }
-

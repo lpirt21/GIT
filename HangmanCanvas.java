@@ -4,10 +4,7 @@
  * This file keeps track of the Hangman display.
  */
 
-
 import acm.graphics.*;
-
-
 
 public class HangmanCanvas extends GCanvas {
 
