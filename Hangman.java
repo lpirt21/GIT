@@ -34,9 +34,16 @@ public class Hangman extends ConsoleProgram {
     private void playTheGame() {
     	println("Welcome to Hangman!");
     	theGame();
+    	/*when the program asks the user if they want to continue
+    	 * playing, if the users answer is yes this while loop makes sure
+    	 * the game continues.  
+    	**/
     	while(line.equalsIgnoreCase("yes")) {
+    		/*if the words on the list end at some point this part makes sure
+    		 * to make it known to the user that the game can't continue.
+        	**/
     		if(f == (words.getWordCount())) {
-    			println("Sorry there are no words left");
+    			println("Sorry there are no more words left");
     			break;
     		}
        	canvas.reset();
@@ -45,36 +52,37 @@ public class Hangman extends ConsoleProgram {
     	}
     }
     
+    //plays the game for each word
     private void theGame() {
     	canvas.addScaffold();
-    	String ac = getWordFrom();
-    	int length = ac.length();
+    	String word = getWordFrom();
+    	int length = word.length();
+    	String lines = theWord(length);//writes the word with dashes.
     	char theCh ='0';
-    	String lin = theWord(length);
     	String incorrectChars = "";
     	String correctChars ="";
     	while(true) {
-    		println("The word now looks like this: " + lin);
+    		println("The word now looks like this: " + lines);
     		println("You have " + mistakes + " guesses left.");
-    		String theChar = readLine("Your guess: ");
-    		while(theChar.length()==0) {
-    			theChar = readLine("Please enter one character: ");
+    		String getChar = readLine("Your guess: ");
+    		while(getChar.length()==0) {
+    			getChar = readLine("Please enter one character: ");
     		}
-    		theCh = readChar(theChar);
-    		while(theChar.length()>1 || !isChar(theCh)) {
+    		theCh = readChar(getChar);
+    		while(getChar.length()>1 || !isChar(theCh)) {
     			println("Please enter " + (isChar(theCh)? "one character" : "a letter"));
-    			theChar = readLine("Your guess: ");
-    			theCh = readChar(theChar);
+    			getChar = readLine("Your guess: ");
+    			theCh = readChar(getChar);
     		}
-    		if(checkChar(theCh,ac)){
+    		if(checkChar(theCh,word)){
     			if(checkChar(theCh,correctChars)) {
     				println("You made this guess already");
     			}else {
     			println("The guess is correct.");
     			}
-    			lin = newWord(theCh,ac,lin);
+    			lines = newWord(theCh,word,lines);
     			correctChars+=Character.toUpperCase(theCh);
-    			canvas.displayWord(lin);
+    			canvas.displayWord(lines);
     		}else {
     			println("There are no " + theCh + "'s in the word");
     			mistakes--;
@@ -87,13 +95,13 @@ public class Hangman extends ConsoleProgram {
     		}
     		if(mistakes == 0) {
     			println("You're completely hung");
-    			println("The word was " + ac);
+    			println("The word was " + word);
     			println("You lose.");
     			askQuestion();
     			break;
     		}
-    		if(isOver(lin)) {
-    			println("You guessed the word: " + lin);
+    		if(isOver(lines)) {
+    			println("You guessed the word: " + lines);
     			println("You win.");
     			askQuestion();
     			break;
