@@ -280,9 +280,6 @@ public class Hangman extends ConsoleProgram {
     public static final int APPLICATION_WIDTH = 900;
 	public static final int APPLICATION_HEIGHT = 700;
 	
-	private static final int WIDTH = APPLICATION_WIDTH;
-	private static final int HEIGHT = APPLICATION_HEIGHT;
-    
     private int numberOfUsedWords=0;
     private String rememberUsedNumbers = "";
     private HangmanLexicon words;
