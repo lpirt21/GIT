@@ -76,7 +76,7 @@ public class HangmanCanvas extends GCanvas {
 		return true;
 	}
 	
-	
+	//adds organ after each mistake
 	private void addOrgan(int j) {
 		switch(j) {
 		case 0 : addHead();break;
@@ -90,18 +90,21 @@ public class HangmanCanvas extends GCanvas {
 		}
 	}
 	
+	//draws head
 	private void addHead() {
 		int x = getWidth()/2 - HEAD_RADIUS;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH;
 		add(new GOval(x,y,HEAD_RADIUS*2,HEAD_RADIUS*2));
 	}
 	
+	//draws body
 	private void addBody() {
 		int x = getWidth()/2;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH + 2*HEAD_RADIUS;
 		add(new GLine(x,y,x,y+BODY_LENGTH));
 	}
 
+	//draws the left hand
 	private void addLeftHand() {
 		int x = getWidth()/2 - UPPER_ARM_LENGTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD;
@@ -109,6 +112,7 @@ public class HangmanCanvas extends GCanvas {
 		add(new GLine(x,y,x,y + LOWER_ARM_LENGTH));
 	}
 	
+	//draws the right hand
 	private void addRightHand() {
 		int x = getWidth()/2 + UPPER_ARM_LENGTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + ROPE_LENGTH + 2*HEAD_RADIUS +ARM_OFFSET_FROM_HEAD;
@@ -116,6 +120,7 @@ public class HangmanCanvas extends GCanvas {
 		add(new GLine(x,y,x,y + LOWER_ARM_LENGTH));
 	}
 	
+	//draws the left leg
 	private void addLeftLeg() {
 		int x = getWidth()/2 - HIP_WIDTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS;
@@ -123,6 +128,7 @@ public class HangmanCanvas extends GCanvas {
 		add(new GLine(x,y,x,y+LEG_LENGTH));
 	}
 	
+	//draws the right leg
 	private void addRightLeg() {
 		int x = getWidth()/2 + HIP_WIDTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS;
@@ -130,12 +136,14 @@ public class HangmanCanvas extends GCanvas {
 		add(new GLine(x,y,x,y+LEG_LENGTH));
 	}
 	
+	//draws the left foot
 	private void addLeftFoot() {
 		int x = getWidth()/2 - HIP_WIDTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS + LEG_LENGTH;
 		add(new GLine(x,y,x-FOOT_LENGTH,y));
 	}
 	
+	//draws the right foot
 	private void addRightFoot() {
 		int x = getWidth()/2 + HIP_WIDTH;
 		int y = (getHeight() - SCAFFOLD_HEIGHT)/3 + BODY_LENGTH + ROPE_LENGTH + 2*HEAD_RADIUS + LEG_LENGTH;
