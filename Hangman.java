@@ -28,7 +28,12 @@ public class Hangman extends ConsoleProgram {
 	}
 	
     public void run() {
+    	playTheGame();
+	}
+    
+    private void playTheGame() {
     	println("Welcome to Hangman!");
+     	canvas.addScaffold();
     	theGame();
     	while(line.equalsIgnoreCase("yes")) {
     		if(f == (words.getWordCount())) {
@@ -39,8 +44,8 @@ public class Hangman extends ConsoleProgram {
     	mistakes = 8;
     	theGame();
     	}
-	}
-
+    }
+    
     private void theGame() {
     	String ac = getWordFrom();
     	int length = ac.length();
@@ -48,7 +53,6 @@ public class Hangman extends ConsoleProgram {
     	String lin = theWord(length);
     	String incorrectChars = "";
     	String correctChars ="";
-    	canvas.addScaffold();
     	while(true) {
     		println("The word now looks like this: " + lin);
     		println("You have " + mistakes + " guesses left.");
@@ -190,6 +194,7 @@ public class Hangman extends ConsoleProgram {
    		String word = words.getWord(n);
    		return word;
     }
+    
     
     private int differentNum(int l) {
     	int m = rgen.nextInt(0,l-1);
