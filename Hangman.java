@@ -77,7 +77,7 @@ public class Hangman extends ConsoleProgram {
     		if(checkChar(theChar,word)){
     			/*
     			 * if the letter is correct, checks whether or not the letter 
-    			 * has alredy been entered by the user and informs the user.
+    			 * has already been entered by the user and informs the user.
     			 */
     			if(checkChar(theChar,correctChars)) {
     				println("You made this guess already");
@@ -88,17 +88,17 @@ public class Hangman extends ConsoleProgram {
     			correctChars+=Character.toUpperCase(theChar);//adds a letter to already guessed correct letters list.
     			canvas.displayWord(lines);//adds the word to canvas.
     		}else {
-    			//in the case of incorrect guuess:
+    			//in the case of incorrect guess:
     			println("There are no " + theChar + "'s in the word");
-    			mistakes--;//substracts one from the number of mistakes the user is allowed to make.
+    			mistakes--;//subtracts one from the number of mistakes the user is allowed to make.
     			/*
     			 * adds incorrect letter to already guessed incorrect letters
-    			 * only if it has not been entered already and converts them to upper case
+    			 * only if it has not been entered already and converts them to upper case.
     			 */
     			incorrectChars += addIncorrectChar(theChar,incorrectChars);
     			if(checkChar(theChar,incorrectChars)){
     			char c = Character.toUpperCase(theChar);
-    			canvas.noteIncorrectGuess(c);//gives the character to HangmanCanvas class so the canvas will be able to display incorrect guesses.
+    			canvas.noteIncorrectGuess(c);//gives the character to HangmanCanvas class so that the incorrect letters will be displayed on canvas.
     			}
     		}
     		//if the user lost the game informs them and prints the correct word. 
@@ -109,7 +109,7 @@ public class Hangman extends ConsoleProgram {
     			askQuestion();//asks user if they want to continue the game.
     			break;
     		}
-    		//if the user won informs them and prints the correct word.
+    		//if the user won, informs them and prints the word.
     		if(isOver(lines)) {
     			println("You guessed the word: " + lines);
     			println("You win.");
@@ -117,13 +117,14 @@ public class Hangman extends ConsoleProgram {
     			break;
     		}
     	}
-    	//if the user answers that they don't want to continue playing stops the game. 
+    	//if the user answers that they don't want to continue playing the program stops the game. 
     	if(answer.equalsIgnoreCase("no")) {
     		println("alright goodbye!");
     	}
     }
     
-    //adds incorrect chars only if they haven't been entered already and converts them to uppercase.
+    
+    //adds incorrect chars only if they haven't been entered already and converts them to upper case.
     private String addIncorrectChar(char newChar,String original) {
     	String res = "";
     	if(!checkChar(newChar,original)) {
@@ -131,6 +132,23 @@ public class Hangman extends ConsoleProgram {
     	}
     	return res;
     }
+    
+    
+    //checks if the string contains the char and returns true if it does.
+    private boolean checkChar(char ch, String word) {
+ 	   boolean flag = false;
+ 	   String word1 = "";
+    		for(int s =0; s<word.length();s++) {
+    		char ch1 = Character.toUpperCase(word.charAt(s));
+    		word1+=ch1;
+    		}
+    		for(int i=0; i<word1.length();i++) {
+ 		   char a =word1.charAt(i);
+ 		   if(a == Character.toUpperCase(ch))flag = true;
+ 	   }
+ 	   return flag;
+    }
+     
     
     /*
      * asks the user if they want to continue playing and keeps asking
@@ -144,7 +162,7 @@ public class Hangman extends ConsoleProgram {
 		}
     }
     
-    //if the dashes has entirely transformed to a word and the user won returns true.
+    //returns true if the dashes we started with have entirely transformed to a word and the user won.
     private boolean isOver(String l) {
     	for(int q=0; q<l.length();q++) {
     		char b = l.charAt(q);
@@ -159,7 +177,7 @@ public class Hangman extends ConsoleProgram {
         for(int j = 0; j<word.length();j++) {
         	char b =word.charAt(j);
         	//checks if the character is a correct guess in both upper and lower cases.
-        	//(for exmaple if the original word is computer and its written like "Computer" and not "COMPUTER".
+        	//(for example if the original word is computer and its written like "Computer" and not "COMPUTER".
  		   if(Character.toLowerCase(b) == ch || Character.toUpperCase(b)==ch) {
  			   result = changeChar(result,b,j);//changes the dash part to the correctly guessed letter.
  		   }
@@ -181,22 +199,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     
-    //checks if the string contains the char and returns true if it does.
-   private boolean checkChar(char ch, String word) {
-	   boolean flag = false;
-	   String word1 = "";
-	   //converts the whole string to uppercase letters.
-   		for(int s =0; s<word.length();s++) {
-   		char ch1 = Character.toUpperCase(word.charAt(s));
-   		word1+=ch1;
-   		}
-   		for(int i=0; i<word1.length();i++) {
-		   char a =word1.charAt(i);
-		   if(a == Character.toUpperCase(ch))flag = true;
-	   }
-	   return flag;
-   }
-    
+  
    //makes sure the character is a letter.
     private boolean isChar(char th) {
     	return Character.isLetter(th);

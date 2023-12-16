@@ -15,7 +15,7 @@ import acm.util.*;
 
 public class HangmanLexicon {
 
-	private final String fileName = "C:/Users/lizi/Desktop/assignment4/ShorterLexicon.txt";
+	private final String fileName = "C:/Users/lizi/Desktop/assignment4/HangmanLexicon.txt";
 	private ArrayList <String> theWords;
 	
 	public HangmanLexicon(){
