@@ -13,7 +13,7 @@ public class Assignment5 extends GraphicsProgram{
 		double labelW = label.getWidth();
 		double labelH = label.getHeight();
 		double x = (w-labelW)/2;
-		double y = h/2;
+		double y = h/2 -label.getDescent();
 		add(label,x,y);
 		GLabel label2 = new GLabel("width: " + labelW + ", height: " + labelH + ", x: " + x + ", y: " + y);
 		add(label2,0,h-label2.getDescent());
