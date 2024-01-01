@@ -8,7 +8,29 @@ import acm.graphics.*;
 public class Assignment7 extends GraphicsProgram{
 
 	public void run() {
-		amountThatFits();
+		drawNine();
+	}
+	
+	private void drawNine() {
+		double x=0;
+		double y = 0;
+		int size = fibonacci(7)*10;
+		add(drawRect(size),x,y);
+		x = size;
+		size = fibonacci(6)*10;
+		add(drawRect(size),x,y);
+		y+=size;
+		size = fibonacci(3)*10;
+		add(drawRect(size),x,y);
+		x += size;
+		size = fibonacci(2)*10;
+		add(drawRect(size),x,y);
+		y+=size;
+		size = fibonacci(1)*10;
+		add(drawRect(size),x,y);
+		y+=size;
+		size = fibonacci(4)*10;
+		add(drawRect(size),x,y);
 	}
 	
 	private void amountThatFits() {
