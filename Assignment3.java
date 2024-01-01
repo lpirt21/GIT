@@ -5,9 +5,8 @@ public class Assignment3 extends ConsoleProgram{
 		
 	public void run() {
 		int n = readInt("Enter a number n: ");
-		println("if you want to know amount of divisors for this number enter 1/n"
-				+ "if you want to know the sum of all numbers from one to n enter 2");
-		int command = readInt("Enter one or two: ");
+		int command = readInt("if you want to know amount of divisors for this number enter 1\n"
+				+ "if you want to know the sum of all numbers from one to n enter 2: ");
 		while(command!=1 && command!=2) {
 			command = readInt("Please enter one or two: ");
 		}
