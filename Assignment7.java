@@ -38,8 +38,10 @@ public class Assignment7 extends GraphicsProgram{
 		y+=size;
 		size = fibonacci(8)*10;
 		add(drawRect(size),x,y);
-		
-	
+		y-=size;
+		size = fibonacci(9)*10;
+		x+=size;
+		add(drawRect(size),x,y);
 	}
 	
 	private void amountThatFits() {
