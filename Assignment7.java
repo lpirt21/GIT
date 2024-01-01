@@ -12,38 +12,21 @@ public class Assignment7 extends GraphicsProgram{
 	}
 	
 	private void drawNine() {
-		double x=0;
-		double y = 0;
-		int size = fibonacci(7)*10;
+		double x=fibonacci(7)*10+fibonacci(3)*10+fibonacci(2)*10;
+		double y = fibonacci(6)*10+fibonacci(1)*10;
+		int size = fibonacci(1)*10;
 		add(drawRect(size),x,y);
-		x = size;
-		size = fibonacci(6)*10;
+		y-= size;
 		add(drawRect(size),x,y);
-		y+=size;
 		size = fibonacci(3)*10;
+		x-=size;
 		add(drawRect(size),x,y);
 		y+=size;
 		size = fibonacci(4)*10;
-		add(drawRect(size),x,y);
-		y -=fibonacci(3)*10;
-		x += fibonacci(3)*10;
-		size = fibonacci(2)*10;
-		add(drawRect(size),x,y);
 		y+=size;
-		size = fibonacci(1)*10;
-		add(drawRect(size),x,y);
-		x+=size;
-		y-=size;
 		size = fibonacci(5)*10;
 		add(drawRect(size),x,y);
-		x+=size;
-		y-=fibonacci(6)*10;
-		size = fibonacci(9)*10;
-		add(drawRect(size),x,y);
-		x-=fibonacci(8)*10;
-		y+=fibonacci(7)*10;
-		size = fibonacci(8)*10;
-		add(drawRect(size),x,y);
+		
 	}
 	
 	private void amountThatFits() {
