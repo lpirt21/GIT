@@ -16,6 +16,6 @@ public class Assignment5 extends GraphicsProgram{
 		double y = (h - labelH)/2;
 		add(label,x,y);
 		GLabel label2 = new GLabel("width: " + labelW + ", height: " + labelH + ", x: " + x + ", y: " + y);
-		add(label2,0,h);
+		add(label2,0,h-label2.getDescent());
 	}
 }
