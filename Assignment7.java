@@ -9,7 +9,7 @@ public class Assignment7 extends GraphicsProgram{
 
 	public void run() {
 		double x=0;
-		for(int i =1; i<9; i++) {
+		for(int i =1; i<10; i++) {
 			int size = fibonacci(i)*10;
 			add(drawRect(size),x,0);
 			x += size + 10;
