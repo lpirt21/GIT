@@ -13,7 +13,7 @@ public class Assignment7 extends GraphicsProgram{
 	
 	private void amountThatFits() {
 		double x=0;
-		for(int i =1; i<11; i++) {
+		for(int i =1;;i++) {
 			int size = fibonacci(i)*10;
 			if((x+size)>getWidth())break;
 			add(drawRect(size),x,0);
