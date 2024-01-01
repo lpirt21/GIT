@@ -15,6 +15,7 @@ public class Assignment7 extends GraphicsProgram{
 		double x=0;
 		for(int i =1; i<11; i++) {
 			int size = fibonacci(i)*10;
+			if((x+size)>getWidth())break;
 			add(drawRect(size),x,0);
 			x += size;
 		}
