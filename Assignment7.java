@@ -24,7 +24,6 @@ public class Assignment7 extends GraphicsProgram{
 		y+=size;
 		size = fibonacci(4)*10;
 		y+=size;
-		size = fibonacci(5)*10;
 		add(drawRect(size),x,y);
 		
 	}
