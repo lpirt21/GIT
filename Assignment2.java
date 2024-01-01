@@ -15,10 +15,10 @@ public class Assignment2 extends ConsoleProgram{
 		}
 		double result =0;
 		switch(ch) {
-		case '+' : result = add(n1,n2);
-		case '*' : result = multiply(n1,n2);
-		case '-' : result = subtract(n1,n2);
-		case '/' : result = devide(n1,n2);
+		case '+' : result = add(n1,n2);break;
+		case '*' : result = multiply(n1,n2);break;
+		case '-' : result = subtract(n1,n2);break;
+		case '/' : result = devide(n1,n2);break;
 		}
 		println(n1 + " " + symbol + " "+ n2 + " = " + result);
 	}
