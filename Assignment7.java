@@ -12,7 +12,7 @@ public class Assignment7 extends GraphicsProgram{
 	}
 	
 	private void drawNine() {
-		double x=fibonacci(7)*10+fibonacci(3)*10+fibonacci(2)*10;
+		double x=fibonacci(7)*10+fibonacci(3)*10;
 		double y = fibonacci(6)*10+fibonacci(1)*10;
 		int size = fibonacci(1)*10;
 		add(drawRect(size),x,y);
