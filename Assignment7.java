@@ -20,9 +20,6 @@ public class Assignment7 extends GraphicsProgram{
 		size = fibonacci(6)*10;
 		add(drawRect(size),x,y);
 		y+=size;
-		size = fibonacci(4)*10;
-		add(drawRect(size),x,y);
-		y+=size;
 		size = fibonacci(3)*10;
 		add(drawRect(size),x,y);
 		x += size;
@@ -30,6 +27,9 @@ public class Assignment7 extends GraphicsProgram{
 		add(drawRect(size),x,y);
 		y+=size;
 		size = fibonacci(1)*10;
+		add(drawRect(size),x,y);
+		y+=size;
+		size = fibonacci(4)*10;
 		add(drawRect(size),x,y);
 	}
 	
