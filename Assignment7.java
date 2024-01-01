@@ -5,13 +5,14 @@ import java.awt.Color;
 import acm.graphics.*;
 
 
-public class Assignment7 extends ConsoleProgram{
+public class Assignment7 extends GraphicsProgram{
 
 	public void run() {
+		double x=0;
 		for(int i =1; i<6; i++) {
 			int size = fibonacci(i)*10;
-			double x = size+ 10*i;
 			add(drawRect(size),x,0);
+			x += size + 10;
 		}
 	}
 	
