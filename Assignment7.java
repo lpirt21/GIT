@@ -38,10 +38,6 @@ public class Assignment7 extends GraphicsProgram{
 		y+=size;
 		size = fibonacci(8)*10;
 		add(drawRect(size),x,y);
-		x=size;
-		y=0;
-		size = fibonacci(9)*10;
-		add(drawRect(size),x,y);
 		
 	
 	}
