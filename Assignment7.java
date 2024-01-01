@@ -8,7 +8,7 @@ import acm.graphics.*;
 public class Assignment7 extends GraphicsProgram{
 
 	public void run() {
-		
+		amountThatFits();
 	}
 	
 	private void amountThatFits() {
