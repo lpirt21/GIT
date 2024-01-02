@@ -29,16 +29,16 @@ public class MidtermPractice12 extends ConsoleProgram{
 	
 
 	private String changeTheBase(int n, int k) {
-		String dec="";
+		String num="";
 		String res = "";
 		int b=0;
 		while(n>0) {
 			b = n%k;
-			dec+=""+b;
+			num+=""+b;
 			n/=k;
 		}
-		for(int i= dec.length()-1; i>=0; i++) {
-			res+=dec.charAt(i);
+		for(int i= num.length()-1; i>=0; i--) {
+			res+=num.charAt(i);
 		}
 		return res;
 	}
