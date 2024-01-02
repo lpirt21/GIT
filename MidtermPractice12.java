@@ -11,7 +11,7 @@ public class MidtermPractice12 extends ConsoleProgram{
 		int n = readInt("Enter a number: ");
 		int k = readInt("Enter a base: ");
 		println(n+ " wtih the base " + k + " is " +changeTheBase(n,k));
-		println("The sum of all numbers of " + n+ " wtih the base " + k + " is " +theSum(n,k));
+		println("The sum of all numbers in " + changeTheBase(n,k) + " is " +theSum(n,k));
 	}
 	
 	
