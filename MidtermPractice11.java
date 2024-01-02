@@ -13,7 +13,7 @@ public class MidtermPractice11 extends ConsoleProgram{
 		println(reversedBinary(n));
 		println(binary(n));
 		println(reverseTheBinary(n));
-		println(binaryToDecimal(n));
+		println(reverse(n));
 	}
 	
 	private String reversedBinary(int n) {
@@ -56,12 +56,12 @@ public class MidtermPractice11 extends ConsoleProgram{
 		return binary2;
 	}
 	
-	private Integer binaryToDecimal(int n) {
+	private int reverse(int n) {
 		String binary1 = reverseTheBinary(n) ;
-		Integer b =0;
-		Integer two = 1;
-		Integer decimal = 0;
-		for(int j =binary1.length()-1; j>=0; j--) {
+		int b =0;
+		int two = 1;
+		int decimal = 0;
+		for(int j =binary1.length()-1; j>0; j--) {
 			char ch = binary1.charAt(j);
 			String number = ""+ch;
 			b = Integer.parseInt(number);
