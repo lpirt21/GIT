@@ -56,11 +56,11 @@ public class MidtermPractice11 extends ConsoleProgram{
 		return binary2;
 	}
 	
-	private int binaryToDecimal(int n) {
+	private Integer binaryToDecimal(int n) {
 		String binary1 = reverseTheBinary(n) ;
-		int b =0;
-		int two = 1;
-		int decimal = 0;
+		Integer b =0;
+		Integer two = 1;
+		Integer decimal = 0;
 		for(int j =binary1.length()-1; j>0; j--) {
 			char ch = binary1.charAt(j);
 			String number = ""+ch;
