@@ -14,13 +14,13 @@ public class MidtermPractice7 extends ConsoleProgram{
 	private void doTheExperiment(int experiment,int amount) {
 		int sum =0;
 		for(int i =0; i<experiment; i++) {
-		 sum+= throwCoin(amount);
+		 sum+= flipCoin(amount);
 		}
 		int avg = sum/amount;
 		println("The average money left after " + amount + " flips is " + avg);
 	}		
 	
-	private int throwCoin(int amount) {
+	private int flipCoin(int amount) {
 		int currentMoney=INITIAL_MONEY;
 		int n=0;
 		while(n<amount) {
