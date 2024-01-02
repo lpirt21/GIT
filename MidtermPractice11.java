@@ -13,7 +13,7 @@ public class MidtermPractice11 extends ConsoleProgram{
 		println(reversedBinary(n));
 		println(binary(n));
 		println(reverseTheBinary(n));
-		println(2*binaryToDecimal(n));
+		println(binaryToDecimal(n));
 	}
 	
 	private String reversedBinary(int n) {
