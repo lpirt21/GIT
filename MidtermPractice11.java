@@ -61,7 +61,7 @@ public class MidtermPractice11 extends ConsoleProgram{
 		int b =0;
 		int two = 1;
 		int decimal = 0;
-		for(int j =binary1.length()-1; j>=0; j--) {
+		for(int j =binary1.length()-1; j>0; j--) {
 			char ch = binary1.charAt(j);
 			String number = ""+ch;
 			b = Integer.parseInt(number);
