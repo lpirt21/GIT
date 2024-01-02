@@ -70,7 +70,7 @@ public class MidtermPractice11 extends ConsoleProgram{
 			two*=2;
 			println(two);
 		}
-		return decimal;
+		return two;
 	}
 	
 }
