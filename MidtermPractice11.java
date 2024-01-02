@@ -68,9 +68,8 @@ public class MidtermPractice11 extends ConsoleProgram{
 			decimal+=b*two;
 			number = "";
 			two*=2;
-			println(two);
 		}
-		return two;
+		return decimal;
 	}
 	
 }
