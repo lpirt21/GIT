@@ -44,4 +44,4 @@ public class MidtermPractice7 extends ConsoleProgram{
 }
 
 
-}
+
