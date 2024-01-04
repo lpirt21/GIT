@@ -22,6 +22,11 @@ public class Hangman extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	private final String fileName = "HangmanLexicon.txt";
 	private ArrayList <String> theWords;
+
+	
+	RandomGenerator rgen = RandomGenerator.getInstance();
+	private final String fileName = "HangmanLexicon.txt";
+	private ArrayList <String> theWords;
 	
 	
 	public void run(){
@@ -49,24 +54,24 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private String[] readLineArray(BufferedReader rd) {
-		ArrayList<String> array = new ArrayList<>();
+		ArrayList<String> lineList = new ArrayList<String>();
 		try {
 			while(true) {
 				String line = rd.readLine();
-				if(line == null)break;
-				array.add(line);
+				if(line ==null)break;
+				lineList.add(line);
 			}
 			rd.close();
-		}catch(IOException ex){
+		}catch(IOException ex) {
 			throw new ErrorException(ex);
 		}
-		String[]result = new String[array.size()];
+		String[] result = new String[lineList.size()];
 		for(int i =0; i<result.length; i++) {
-			result[i] = array.get(i);
+			result[i] = lineList.get(i);
 		}
-		
 		return result;
 	}
+	
 	
     /*
      * changes the size of the console so the hangman illustration words
