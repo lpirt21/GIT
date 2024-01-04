@@ -1,3 +1,4 @@
+
 /*
  * File: Hangman.java
  * ------------------
@@ -21,33 +22,51 @@ public class Hangman extends ConsoleProgram {
 	
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	private final String fileName = "ShorterLexicon.txt";
-	private ArrayList <String> theWords;
+
 
 	
 	public void run(){
-		String name = fileName;
-		ArrayList<String> lines  = openFileReader(name);
-		for(int i = lines.size()-1; i>=0; i--) {
-			println(lines.get(i));
+		println("This program reverses the lines in a file");
+		BufferedReader reader = openFileReader("Enter input file: ");
+		String[] lines = readLineArray(reader);
+		for(int i = lines.length-1; i>=0; i--) {
+			println(lines[i]);
 		}
 	}
 	
 	//reads each line and adds each read word in an arraylist.
-	private ArrayList<String> openFileReader(String fileName) {
-		theWords = new ArrayList<String>();
+	private BufferedReader openFileReader(String prompt) {
 		BufferedReader rd = null;
+		while(rd == null) {
+			try {
+				String name  = readLine(prompt);
+				rd = new BufferedReader(new FileReader(name));
+			}catch(IOException ex) {
+				throw new ErrorException(ex);
+			}
+		}
+		return rd;
+	}
+	
+	private String[] readLineArray(BufferedReader rd) {
+		ArrayList<String> lineList = new ArrayList<String>();
 		try {
-			rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
 				String line = rd.readLine();
-				if(line == null)break;
-				theWords.add(line);
+				if(line ==null)break;
+				lineList.add(line);
 			}
 			rd.close();
 		}catch(IOException ex) {
-			println("can't open that file");
+			throw new ErrorException(ex);
 		}
-		return theWords;
+		String[] result = new String[lineList.size()];
+		for(int i =0; i<result.length; i++) {
+			result[i] = lineList.get(i);
+		}
+		return result;
 	}
+	
 
 }
+
