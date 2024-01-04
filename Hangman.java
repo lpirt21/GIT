@@ -26,46 +26,28 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run(){
 		String name = fileName;
-		
-		BufferedReader reader = openFileReader("bla");
-		String[] lines = readLineArray(reader);
-		for(int i = lines.length-1; i>=0; i--) {
-			println(lines[i]);
+		ArrayList<String> lines  = openFileReader(name);
+		for(int i = lines.size()-1; i>=0; i--) {
+			println(lines.get(i));
 		}
 	}
 	
 	//reads each line and adds each read word in an arraylist.
-	private BufferedReader openFileReader(String fileName) {
+	private ArrayList<String> openFileReader(String fileName) {
+		theWords = new ArrayList<String>();
 		BufferedReader rd = null;
-		while(rd == null) {
-			try {
-				String name  = readLine("Enter a file name: ");
-				rd = new BufferedReader(new FileReader(name));
-			}catch(IOException ex) {
-				println("This file does not exist");
-			}
-		}
-		return rd;
-	}
-	
-	private String[] readLineArray(BufferedReader rd) {
-		ArrayList<String> lineList = new ArrayList<String>();
 		try {
+			rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
 				String line = rd.readLine();
-				if(line ==null)break;
-				lineList.add(line);
+				if(line == null)break;
+				theWords.add(line);
 			}
 			rd.close();
 		}catch(IOException ex) {
-			throw new ErrorException(ex);
+			println("can't open that file");
 		}
-		String[] result = new String[lineList.size()];
-		for(int i =0; i<result.length; i++) {
-			result[i] = lineList.get(i);
-		}
-		return result;
+		return theWords;
 	}
-	
 
 }
