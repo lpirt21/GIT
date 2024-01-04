@@ -42,6 +42,7 @@ public class Hangman extends ConsoleProgram {
 				String name  = readLine(prompt);
 				rd = new BufferedReader(new FileReader(name));
 			}catch(IOException ex) {
+				println("can't open that file");
 				throw new ErrorException(ex);
 			}
 		}
