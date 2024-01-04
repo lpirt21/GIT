@@ -43,7 +43,7 @@ public class Hangman extends ConsoleProgram {
 				rd = new BufferedReader(new FileReader(name));
 			}catch(IOException ex) {
 				println("can't open that file");
-				throw new ErrorException(ex);
+			
 			}
 		}
 		return rd;
