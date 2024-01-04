@@ -23,9 +23,15 @@ public class Hangman extends ConsoleProgram {
 	private final String fileName = "HangmanLexicon.txt";
 	private ArrayList <String> theWords;
 	
+	
 	public void run(){
 		String name = fileName;
-		openFileReader("bla");
+		
+		BufferedReader reader = openFileReader("bla");
+		String[] lines = readLineArray(reader);
+		for(int i = lines.length-1; i>=0; i--) {
+			println(lines[i]);
+		}
 	}
 	
 	//reads each line and adds each read word in an arraylist.
@@ -40,6 +46,26 @@ public class Hangman extends ConsoleProgram {
 			}
 		}
 		return rd;
+	}
+	
+	private String[] readLineArray(BufferedReader rd) {
+		ArrayList<String> array = new ArrayList<>();
+		try {
+			while(true) {
+				String line = rd.readLine();
+				if(line == null)break;
+				array.add(line);
+			}
+			rd.close();
+		}catch(IOException ex){
+			throw new ErrorException(ex);
+		}
+		String[]result = new String[array.size()];
+		for(int i =0; i<result.length; i++) {
+			result[i] = array.get(i);
+		}
+		
+		return result;
 	}
 	
     /*
