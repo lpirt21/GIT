@@ -1,12 +1,9 @@
 
 
 import acm.program.*;
-import acm.util.RandomGenerator;
 
 public class MidtermPractice12 extends ConsoleProgram{
 
-	RandomGenerator rgen = RandomGenerator.getInstance();
-	
 	public void run() {
 		int n = readInt("Enter a number: ");
 		int k = readInt("Enter a base: ");

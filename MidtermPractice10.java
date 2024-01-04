@@ -1,12 +1,9 @@
 
 
 import acm.program.*;
-import acm.util.RandomGenerator;
 
 public class MidtermPractice10 extends ConsoleProgram{
 
-	RandomGenerator rgen = RandomGenerator.getInstance();
-	
 	public void run() {
 		int n =readInt("Enter a number: ");
 		println(countTheOdds(n)==countTheEvens(n));
