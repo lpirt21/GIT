@@ -60,6 +60,7 @@ public class Hangman extends ConsoleProgram {
 			}
 			sentence+=token2;
 		}
+		lines.set(i, sentence);
 		}
 	}
 	//reads each line and adds each read word in an arraylist.
