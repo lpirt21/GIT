@@ -36,13 +36,13 @@ public class Hangman extends ConsoleProgram {
 	
 	
 	private void transform(ArrayList<String> lines) {
-		String sentence = "";
 		int small = 'a';
 		int small2 = 'z';
 		int big = 'A';
 		int big2 = 'Z';
 		String token2= "";
 		for(int i =0; i<lines.size(); i++) {
+		String sentence = "";
 		String line1 = lines.get(i);
 		StringTokenizer tokenizer = new StringTokenizer(line1, " .,!?:;\"'",true);
 		while(tokenizer.hasMoreTokens()) {
