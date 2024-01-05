@@ -12,6 +12,7 @@ import acm.util.*;
 
 import java.awt.*;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,31 +28,18 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run(){
 		println("This program reverses the lines in a file");
-		BufferedReader reader = openFileReader("Enter input file: ");
-		String[] lines = readLineArray(reader);
+	
+		String[] lines = readLineArray();
 		for(int i = lines.length-1; i>=0; i--) {
 			println(lines[i]);
 		}
 	}
 	
-	//reads each line and adds each read word in an arraylist.
-	private BufferedReader openFileReader(String prompt) {
-		BufferedReader rd = null;
-		while(rd == null) {
-			try {
-				String name  = readLine(prompt);
-				rd = new BufferedReader(new FileReader(name));
-			}catch(IOException ex) {
-				println("can't open that file");
-			
-			}
-		}
-		return rd;
-	}
 	
-	private String[] readLineArray(BufferedReader rd) {
+	private String[] readLineArray() {
 		ArrayList<String> lineList = new ArrayList<String>();
 		try {
+			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
 				String line = rd.readLine();
 				if(line ==null)break;
