@@ -59,6 +59,7 @@ public class Hangman extends ConsoleProgram {
 				}
 			}
 			sentence+=token2;
+			token2= "";
 		}
 		lines.set(i, sentence);
 		}
