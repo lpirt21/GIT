@@ -12,11 +12,14 @@ import acm.util.*;
 
 import java.awt.*;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import javax.swing.JFileChooser;
 
 public class Hangman extends ConsoleProgram {
 
@@ -28,36 +31,36 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run(){
 		println("This program reverses the lines in a file");
-		readLineArray();
-		
+		BufferedReader reader = openFile();
+		readFile(reader);
 	}
 	
 	
-	private void readLineArray() {
-		int lines = 0;
-		int words = 0;
-		int characters = 0;
+	private void readFile(BufferedReader rd) {
 		try {
-			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
-				String line = rd.readLine();
-				if(line ==null)break;
-				StringTokenizer tokenizer = new StringTokenizer(line," ,.!':;\" ()");
-				while(tokenizer.hasMoreTokens()) {
-					String token = tokenizer.nextToken();
-					characters+=token.length();
-					words++;
-					
-				}
-				lines++;
+			String line = rd.readLine();
+			if(line == null) break;
+			println(line);
 			}
-			rd.close();
 		}catch(IOException ex) {
-			throw new ErrorException(ex);
+			println("cant");
 		}
-		println("Number of lines = " + lines);
-		println("Number of words = " + words);
-		println("Number of characters = " + characters);
+	}
+	
+	private BufferedReader openFile() {
+		BufferedReader rd = null;
+		JFileChooser chooser = new JFileChooser();
+		int result = chooser.showOpenDialog(this);
+		if(result == JFileChooser.APPROVE_OPTION) {
+			try {
+				File file = chooser.getSelectedFile();
+				rd = new BufferedReader(new FileReader(file));
+			}catch(IOException ex) {
+				println("Can't open that file");
+			}
+		}
+		return rd;
 	}
 	
 
