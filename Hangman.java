@@ -44,7 +44,7 @@ public class Hangman extends ConsoleProgram {
 		String token2= "";
 		for(int i =0; i<lines.size(); i++) {
 		String line1 = lines.get(i);
-		StringTokenizer tokenizer = new StringTokenizer(line1, " .,!?:;\"'");
+		StringTokenizer tokenizer = new StringTokenizer(line1, " .,!?:;\"'",true);
 		while(tokenizer.hasMoreTokens()) {
 			String token = tokenizer.nextToken();
 			for(int j =0; j<token.length(); j++) {
