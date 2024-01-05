@@ -28,32 +28,36 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run(){
 		println("This program reverses the lines in a file");
-	
-		String[] lines = readLineArray();
-		for(int i = lines.length-1; i>=0; i--) {
-			println(lines[i]);
-		}
+		readLineArray();
+		
 	}
 	
 	
-	private String[] readLineArray() {
-		ArrayList<String> lineList = new ArrayList<String>();
+	private void readLineArray() {
+		int lines = 0;
+		int words = 0;
+		int characters = 0;
 		try {
 			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
 				String line = rd.readLine();
 				if(line ==null)break;
-				lineList.add(line);
+				StringTokenizer tokenizer = new StringTokenizer(line," ,.!':;\" ()");
+				while(tokenizer.hasMoreTokens()) {
+					String token = tokenizer.nextToken();
+					characters+=token.length();
+					words++;
+					
+				}
+				lines++;
 			}
 			rd.close();
 		}catch(IOException ex) {
 			throw new ErrorException(ex);
 		}
-		String[] result = new String[lineList.size()];
-		for(int i =0; i<result.length; i++) {
-			result[i] = lineList.get(i);
-		}
-		return result;
+		println("Number of lines = " + lines);
+		println("Number of words = " + words);
+		println("Number of characters = " + characters);
 	}
 	
 
