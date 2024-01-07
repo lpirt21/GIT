@@ -47,7 +47,7 @@ public class Hangman extends ConsoleProgram {
 				line = rd.readLine();
 				if(line == null)break;
 				StringTokenizer tokenize = new StringTokenizer(line, " :;'-");
-				if(tokenize.hasMoreTokens()) {
+				while(tokenize.hasMoreTokens()) {
 					String t = tokenize.nextToken();
 					println(t);
 					if(t.charAt(t.length()-1) == '!') {
@@ -72,8 +72,7 @@ public class Hangman extends ConsoleProgram {
 					}else {
 						words++;
 						chars+=t.length();
-					}
-					
+					}	
 				}
 			}
 			rd.close();
