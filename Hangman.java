@@ -31,20 +31,52 @@ public class Hangman extends ConsoleProgram {
 		
 	}
 	
+
 	private void readFile() {
-		String line= "";
+		int chars = 0;
+		int sentences = 0;
+		int words = 0;
+		int quest =0;
+		int excl = 0;
+		int period = 0;
+		String line = "";
 		try {
 			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
-			line = rd.readLine();
-			if(line == null)break;
-			println(line);
+				line = rd.readLine();
+				StringTokenizer tokenizer = new StringTokenizer(line, " ;:,.!?\" ' ()");
+				StringTokenizer tokenize = new StringTokenizer(line, " ");
+				if(tokenize.hasMoreTokens()) {
+					String t = tokenize.nextToken();
+					if(t.charAt(t.length()-1) == '!') {
+						sentences++;
+						excl++;
+					}else if(t.charAt(t.length() -1) == '?') {
+						sentences++;
+						quest++;
+					}else if(t.charAt(t.length()-1) == '.') {
+						sentences++;
+						period++;
+					}
+				}
+				if(tokenizer.hasMoreTokens()) {
+					String token = tokenizer.nextToken();
+					words++;
+					chars+=token.length();
+				}
+				if(line == null)break;
 			}
 			rd.close();
 		}catch(IOException ex) {
-			println("Could not open that fiel");
+			println("Could not open that file");
 		}
-		
+		println("There are " + sentences + " sentences");
+		println("There are " + words + " words");
+		println("There are " + chars + " letters");
+		println("There are " + quest + " sentences that end on question mark");
+		println("There are " + excl + " sentences that end on exclamation point");
+		println("There are " + period + " sentences that end on period");
 	}
+	
 }
 
