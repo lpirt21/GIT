@@ -39,6 +39,7 @@ public class Hangman extends ConsoleProgram {
 		int quest =0;
 		int excl = 0;
 		int period = 0;
+		int comma =0;
 		String line = "";
 		try {
 			BufferedReader rd = new BufferedReader(new FileReader(fileName));
@@ -58,6 +59,8 @@ public class Hangman extends ConsoleProgram {
 					}else if(t.charAt(t.length()-1) == '.') {
 						sentences++;
 						period++;
+					}else if(t.charAt(t.length()-1) == ',') {
+						comma++;
 					}
 				}
 				if(tokenizer.hasMoreTokens()) {
@@ -76,6 +79,7 @@ public class Hangman extends ConsoleProgram {
 		println("There are " + quest + " sentences that end on question mark");
 		println("There are " + excl + " sentences that end on exclamation point");
 		println("There are " + period + " sentences that end on period");
+		println("There are " + comma + " commas");
 	}
 	
 }
