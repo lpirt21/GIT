@@ -50,6 +50,7 @@ public class Hangman extends ConsoleProgram {
 				StringTokenizer tokenize = new StringTokenizer(line, " ");
 				if(tokenize.hasMoreTokens()) {
 					String t = tokenize.nextToken();
+					println(t);
 					if(t.charAt(t.length()-1) == '!') {
 						sentences++;
 						excl++;
