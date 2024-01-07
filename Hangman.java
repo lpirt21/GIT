@@ -21,7 +21,7 @@ public class Hangman extends ConsoleProgram {
 
 	
 	RandomGenerator rgen = RandomGenerator.getInstance();
-	private final String fileName = "ShorterLexicon.txt";
+	private final String fileName = "C:/Users/lizi/Desktop/assignment4/ShorterLexicon.txt";
 	private ArrayList <String> theWords;
 
 	
