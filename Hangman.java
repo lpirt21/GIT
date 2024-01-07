@@ -44,6 +44,7 @@ public class Hangman extends ConsoleProgram {
 			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while(true) {
 				line = rd.readLine();
+				if(line == null)break;
 				StringTokenizer tokenizer = new StringTokenizer(line, " ;:,.!?\" ' ()");
 				StringTokenizer tokenize = new StringTokenizer(line, " ");
 				if(tokenize.hasMoreTokens()) {
@@ -64,7 +65,6 @@ public class Hangman extends ConsoleProgram {
 					words++;
 					chars+=token.length();
 				}
-				if(line == null)break;
 			}
 			rd.close();
 		}catch(IOException ex) {
