@@ -46,28 +46,34 @@ public class Hangman extends ConsoleProgram {
 			while(true) {
 				line = rd.readLine();
 				if(line == null)break;
-				StringTokenizer tokenizer = new StringTokenizer(line, " ;:,.!?\" ' ()");
-				StringTokenizer tokenize = new StringTokenizer(line, " ");
+				StringTokenizer tokenize = new StringTokenizer(line, " :;'-");
 				if(tokenize.hasMoreTokens()) {
 					String t = tokenize.nextToken();
 					println(t);
 					if(t.charAt(t.length()-1) == '!') {
 						sentences++;
 						excl++;
+						chars+=t.length()-1;
+						words++;
 					}else if(t.charAt(t.length() -1) == '?') {
 						sentences++;
 						quest++;
+						chars+=t.length()-1;
+						words++;
 					}else if(t.charAt(t.length()-1) == '.') {
 						sentences++;
 						period++;
+						chars+=t.length()-1;
+						words++;
 					}else if(t.charAt(t.length()-1) == ',') {
 						comma++;
+						words++;
+						chars+=t.length()-1;
+					}else {
+						words++;
+						chars+=t.length();
 					}
-				}
-				if(tokenizer.hasMoreTokens()) {
-					String token = tokenizer.nextToken();
-					words++;
-					chars+=token.length();
+					
 				}
 			}
 			rd.close();
