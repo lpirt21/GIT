@@ -93,9 +93,10 @@ public class Ch11Ex9 extends GraphicsProgram {
 	}
 	
 	private void transform(String wr, int j) {
-		int l = 0;
 		StringTokenizer tokenizer = new StringTokenizer(wr," ", true);
 		String token = "";
+		gobj = new GRect(0,0,1,1);
+		int count =0;
 		while(tokenizer.hasMoreTokens()) {
 			token = tokenizer.nextToken();
 			for(int i=0; i < token.length();i++) {
@@ -104,48 +105,41 @@ public class Ch11Ex9 extends GraphicsProgram {
 				m = token.charAt(i-1);
 				}
 				char h = token.charAt(i);
-				if(l==0 && h =='.') {
-					GOval oval = new GOval(diff,diffy1+diffy1*j,CIRCLE,CIRCLE);
-					oval.setFilled(true);
-					add(oval);
-					gobj = oval;
-				}
-				if(m == '.' && h == '.') {
+				
+				if(m == '.') {
+				if(h == '.') {
 					GOval oval = new GOval(gobj.getX() + CIRCLE+ diff,diffy1+diffy1*j,CIRCLE,CIRCLE);
 					oval.setFilled(true);
 					add(oval);
 					gobj = oval;
-				}else if(m =='-' && h == '.') {
+				}
+				}else if(m =='-') {
+					if(h == '.') {
 					GOval oval = new GOval(gobj.getX() + RECT_W + diff,diffy1+diffy1*j,CIRCLE,CIRCLE);
 					oval.setFilled(true);
 					add(oval);
 					gobj = oval;
+					}
 				}
-				if(l==0 && h =='-') {
-					GRect rect = new GRect(diff ,diffy2+diffy1*j,RECT_W,RECT_H);
-					rect.setFilled(true);
-					add(rect);
-					gobj = rect;
-				}
-				if(m == '-' && h == '-') {
+				if(m == '-') {
+				if(h == '-') {
 					GRect rect = new GRect(gobj.getX() + RECT_W+ diff ,diffy2+diffy1*j,RECT_W,RECT_H);
 					rect.setFilled(true);
 					add(rect);
 					gobj = rect;
-				}else if(m=='.' && h == '-') {
+				}
+				}else if(m=='.') {
+					if(h == '-') {
 					GRect rect = new GRect(gobj.getX() + CIRCLE+ diff ,diffy2+diffy1*j,RECT_W,RECT_H);
 					rect.setFilled(true);
 					add(rect);
 					gobj = rect;
+					}
 				}
 				if(h == ' ') {
 					gobj = new GRect(gobj.getX() +gobj.getWidth()+ diff, j*diffy1, 10,10);
 				}
-				l++;
 			}
-		}
-	
-			
-	}
-	
+		}		
+	}	
 }
