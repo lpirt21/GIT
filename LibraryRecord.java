@@ -1,7 +1,5 @@
 //the art and science of java chapter 6 exercise 9
 
-
-
 public class LibraryRecord {
 	
 	public LibraryRecord(String title, String author, int num, String publisher, int year, boolean flag){
