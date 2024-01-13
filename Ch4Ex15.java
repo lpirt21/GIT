@@ -5,38 +5,41 @@ import acm.graphics.*;
 
 
 public class Ch4Ex15 extends GraphicsProgram{
-	
-	private static final double ball =50;
-	private static final int PAUSE_TIME = 5;
 	public void run() {
 		double x = (getWidth()-ball)/2;
 		double y = (getHeight()-ball)/2;
-		GOval oval = new GOval(x,y,ball,ball);
+		GOval oval = new GOval(x,y, ball,ball);
 		oval.setFilled(true);
 		add(oval);
-		double dx = 1;
-		double dy = 1;
 		while(true) {
 			if(dx > 0) {
-				dx = Math.min(dx, getWidth() - ball - oval.getX());
+				dx = (int)Math.min(dx, getWidth() - ball - oval.getX());
 			}else {
-				dx = Math.max(dx, -oval.getX());
+				dx = (int)Math.max(dx, -oval.getX());
 			}
 			
 			if(dy > 0) {
-				dy = Math.min(dy, getHeight() - ball - oval.getY());
+				dy = (int)Math.min(dy, getHeight() - ball - oval.getY());
 			}else {
-				dy =Math.max(dy, -oval.getY());
+				dy = (int)Math.max(dy, -oval.getY());
 			}
 			
-			oval.move(dx,dy);
-			if(oval.getX() >= (getWidth()-ball) || oval.getX() <= 0) {
-				dx=-dx;
-			}
-			if(oval.getY() >= (getHeight()-ball) || oval.getY() <= 0) {
-				dy=-dy;
-			}
-			pause(PAUSE_TIME);
+			oval.move(dx, dy);
+			pause(2);
+			
+		if(oval.getY() >= getHeight()- ball || oval.getY() <=0) {
+			dy = -dy;
+		}
+		if (oval.getX() >= getWidth() - ball || oval.getX() <=0) {
+			dx = -dx;
+		}
+	
 		}
 	}
+	/* private constants */
+	private static int dx =10;
+	private static int dy =10;
+	private static final double ball = 50;
+	private static final double PAUSE_TIME = 5;
+	
 }
