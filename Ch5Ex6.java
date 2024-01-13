@@ -16,7 +16,7 @@ public class Ch5Ex6  extends GraphicsProgram{
 	    add(createFilledCircle(x,y1,LAMP_RADIUS,Color.RED)); 
 	    add(createFilledCircle(x,y1 + dy,LAMP_RADIUS,Color.YELLOW)); 
 	    add(createFilledCircle(x,y1 + 2*dy,LAMP_RADIUS,Color.GREEN)); 
-		
+		add(createFilledCircle(x,y1+3*dy,LAMP_RADIUS,Color.blue));
 	}
 	
 	private GRect createFilledRect(double x, double y) {
@@ -40,7 +40,7 @@ public class Ch5Ex6  extends GraphicsProgram{
 	private static final double FRAME_WIDTH = 50;
 	private static final double FRAME_HEIGHT = 100;
 	private static final double LAMP_RADIUS = 10;
-	private static final double LAMP_AMOUNT = 3;
+	private static final double LAMP_AMOUNT = 4;
 }
 
 
