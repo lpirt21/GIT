@@ -13,7 +13,7 @@ public class Ch12Ex7 extends ConsoleProgram {
 			arr[i] =i+1;
 		}
 		sort(arr);
-		
+		println(arr);
 	}
 	private void sort(int[] newArray) {
 		for(int lh =0; lh<newArray.length; lh++) {
