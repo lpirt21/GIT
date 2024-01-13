@@ -14,7 +14,7 @@ public class Ch8Ex20  extends ConsoleProgram{
                  second = readLine("-Insert the second DNA chain: ");
         } 
         if(findPosition(first,second)!=-1) {
-        println("These DNAs match and their matching position is" + findPosition(first, second));
+        println("These DNAs match and their matching position is " + (findPosition(first, second)+1));
         }else {
         	println("these DNAs don't match");
         }
