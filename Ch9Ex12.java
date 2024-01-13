@@ -2,6 +2,7 @@
 
 import acm.program.*;
 import acm.graphics.*;
+import java.awt.*;
 
 public class Ch9Ex12 extends GraphicsProgram{
 
