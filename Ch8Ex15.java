@@ -1,7 +1,7 @@
 //the art and science of java chapter 8 exercise 15
 
 import acm.program.*;
-import acm.util.*;
+import java.util.*;
 
 public class Ch8Ex15  extends ConsoleProgram{
 	public void run() {
