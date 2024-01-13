@@ -2,8 +2,7 @@
 
 import acm.graphics.*;
 import acm.program.*;
-import javafx.event.ActionEvent;
-
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
