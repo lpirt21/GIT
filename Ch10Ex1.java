@@ -32,7 +32,7 @@ public class Ch10Ex1 extends GraphicsProgram{
 	}
 	
 	
-	public void mouseClicked(MouseEvent e) {
+	public void mousePressed(MouseEvent e) {
 		Color col = color(original);
 		if(e.getX() >= label1.getX() && e.getX() <= label1.getX() +label1.getWidth() &&
 				e.getY() <= label1.getY() && e.getY() >= label1.getY() - label1.getHeight()) {
