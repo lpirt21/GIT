@@ -23,7 +23,7 @@ public class Ch8Ex20  extends ConsoleProgram{
     
     public static int findPosition(String first, String second){
     	String index = "";
-    	for( int i=0; i<first.length(); i++){
+    	for( int i=first.length()-1; i>=0; i--){
             char ch = first.charAt(i);
             if (ch == 'A'){
                 index= index.concat("T");
@@ -36,7 +36,6 @@ public class Ch8Ex20  extends ConsoleProgram{
             }
     	}
     	return second.indexOf(index);
-    	
     }   
 
 }
