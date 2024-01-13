@@ -44,10 +44,7 @@ public class Ch12Ex4  extends ConsoleProgram {
 			first[i] = res;
 			first[l] = word1;
 			}
-			for(int h=0; h<first.length; h++) {
-				println(first[h]);
-			}
-			println(" ");
+
 		}
 		return first;
 	}
