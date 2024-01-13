@@ -7,6 +7,7 @@ import java.util.*;
 import javax.swing.*;
 
 public class Ch11Ex9 extends GraphicsProgram {
+	
 	private int count =0;
 	private JTextField words;
 	private String line;
