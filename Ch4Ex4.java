@@ -1,7 +1,7 @@
 //the art and science of java chapter 4 exercise 4
 
 import acm.program.*;
-
+s
 public class Ch4Ex4 extends ConsoleProgram{
 	
 	public void run() {
