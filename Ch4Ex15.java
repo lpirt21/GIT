@@ -1,8 +1,7 @@
+//the art and science of java chapter 4 exercise 15
 
 import acm.program.*;
-import java.awt.*;
 import acm.graphics.*;
-
 
 public class Ch4Ex15 extends GraphicsProgram{
 	public void run() {
@@ -25,7 +24,7 @@ public class Ch4Ex15 extends GraphicsProgram{
 			}
 			
 			oval.move(dx, dy);
-			pause(2);
+			pause(PAUSE_TIME);
 			
 		if(oval.getY() >= getHeight()- ball || oval.getY() <=0) {
 			dy = -dy;
