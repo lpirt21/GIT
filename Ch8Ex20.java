@@ -23,7 +23,7 @@ public class Ch8Ex20  extends ConsoleProgram{
     
     public static int findPosition(String shortDNA, String longDNA){
     	String index = "";
-    	for( int i=0; i<shortDNA.length(); i--){
+    	for( int i=0; i<shortDNA.length(); i++){
             char ch = shortDNA.charAt(i);
             if (ch == 'A'){
                 index= index.concat("T");
