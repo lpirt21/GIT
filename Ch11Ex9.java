@@ -30,7 +30,6 @@ public class Ch11Ex9 extends GraphicsProgram {
 		if(e.getSource() == words) {
 			line = words.getText();
 			StringTokenizer tokenizer = new StringTokenizer(line, " ",true);
-			count =0;
 			while(tokenizer.hasMoreTokens()) {
 				String token = tokenizer.nextToken();
 				token = takeString(token);
@@ -96,7 +95,6 @@ public class Ch11Ex9 extends GraphicsProgram {
 		StringTokenizer tokenizer = new StringTokenizer(wr," ", true);
 		String token = "";
 		gobj = new GRect(0,0,1,1);
-		int count =0;
 		while(tokenizer.hasMoreTokens()) {
 			token = tokenizer.nextToken();
 			for(int i=0; i < token.length();i++) {
