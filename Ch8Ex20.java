@@ -21,10 +21,10 @@ public class Ch8Ex20  extends ConsoleProgram{
     }
     
     
-    public static int findPosition(String first, String second){
+    public static int findPosition(String shortDNA, String longDNA){
     	String index = "";
-    	for( int i=first.length()-1; i>=0; i--){
-            char ch = first.charAt(i);
+    	for( int i=0; i<shortDNA.length(); i--){
+            char ch = shortDNA.charAt(i);
             if (ch == 'A'){
                 index= index.concat("T");
             }else if (ch =='T'){
@@ -35,7 +35,7 @@ public class Ch8Ex20  extends ConsoleProgram{
                 index= index.concat("G");
             }
     	}
-    	return second.indexOf(index);
+    	return longDNA.indexOf(index);
     }   
 
 }
