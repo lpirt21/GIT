@@ -4,20 +4,15 @@ import acm.program.*;
 import acm.graphics.*;
 
 public class Ch1Ex1 extends GraphicsProgram{
-	public void run() {
-		GLabel label = new GLabel("I love java!");
-		label.setFont("Serif-50");
-		double width = label.getWidth();
-		double height = label.getHeight()/2;
-		double x = (getWidth()-width)/2;
-		double y = (getHeight()-height)/2 ;
-		add(label,x,y);
-		GLabel signature = new GLabel("Lizi Pirtskhalava");
-		signature.setFont("Helvetica-10");
-		double sWidth = signature.getWidth();
-		double sHeight = signature.getHeight();
-		double xS = getWidth() - sWidth;
-		double yS = getHeight() - sHeight;
-		add(signature,xS,yS);
-	}
+		public void run() {
+			GLabel label = new GLabel("I love java!");
+			label.setFont("Serif-50");
+			double x = (getWidth() - label.getWidth())/2;
+			double y = (getHeight() - label.getHeight())/2 ;
+			add(label,x,y);
+			GLabel signature = new GLabel("Lizi Pirtskhalava");
+			double xS = getWidth() - signature.getWidth();
+			double yS = getHeight() - signature.getHeight();
+			add(signature,xS,yS);
+		}
 }
