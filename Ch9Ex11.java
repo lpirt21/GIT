@@ -7,6 +7,7 @@ public class Ch9Ex11 extends GraphicsProgram{
 
 	
 	private static final double cube = 151;
+	private static final int APPLICATION_HEIGHT = 453;
 	
 	public void run() {
 		for(int i=0; i <5; i++) {
