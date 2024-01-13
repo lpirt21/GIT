@@ -8,7 +8,6 @@ public class Ch11Ex5 extends ConsoleProgram {
 	private static final int num =9;
 	
 	public void run() {
-		int n = readInt("How many numbers in a row does the square have? ");
 		int[][] grid = {{3,9,2,4,6,5,8,1,7}, {7,4,1,8,9,3,6,2,5}, {6,8,5,2,7,1,4,3,9},
                {2,5,4,1,3,8,7,9,6}, {8,3,9,6,2,7,1,5,4}, {1,7,6,9,5,4,2,8,3}, 
                {9,6,7,5,8,2,3,4,1}, {4,2,3,7,1,9,5,6,8}, {5,1,8,3,4,6,9,7,2}};
