@@ -7,7 +7,7 @@ import acm.graphics.*;
 public class Ch4Ex15 extends GraphicsProgram{
 	
 	private static final double ball =50;
-	private static final int PAUSE_TIME = 10;
+	private static final int PAUSE_TIME = 5;
 	public void run() {
 		double x = (getWidth()-ball)/2;
 		double y = (getHeight()-ball)/2;
