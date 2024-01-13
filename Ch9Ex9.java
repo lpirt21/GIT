@@ -5,6 +5,10 @@ import acm.graphics.*;
 
 public class Ch9Ex9 extends GraphicsProgram{
 
+	
+	private static final int DAY_IN_MONTH = 31;
+	private static final int DAY_MONTH_STARTS = 3;
+	
 	public void run() {
 		double days = getWidth()/19;
 		drawDays(getWidth(),days);
@@ -64,9 +68,6 @@ public class Ch9Ex9 extends GraphicsProgram{
 		}
 	}
 	
-	
-	private static final int DAY_IN_MONTH = 31;
-	private static final int DAY_MONTH_STARTS = 4;
 	
 }
 
