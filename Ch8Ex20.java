@@ -3,13 +3,13 @@ import acm.program.*;
 public class Ch8Ex20  extends ConsoleProgram{
     public void run(){
         println("This program takes 2 DNA chains and tells if they can match at a specific position or not"); 
-        println("The second chain you enter should be same or longer length than the first! ");
+        println("The second chain you enter should be same or shorter length than the first! ");
         String first = readLine("Enter first DNA: ");
         String second = readLine("Enter second DNA: ");       
 	
 
         while (second.length()>first.length()) {
-                println("Second DNA should be longer than the first");
+                println("Second DNA should be same shorter than the first");
                  second = readLine("-Insert the first DNA chain(correct this time please!): ");
                  first = readLine("-Insert the second DNA chain(correct this time please!): ");
         } 
@@ -21,7 +21,7 @@ public class Ch8Ex20  extends ConsoleProgram{
     }
     
     
-    public static int findPosition(String shortDNA, String longDNA){
+    public static int findPosition(String longDNA,String shortDNA){
     	String index = "";
     	for( int i=0; i<shortDNA.length(); i++){
             char ch = shortDNA.charAt(i);
