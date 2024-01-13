@@ -17,9 +17,8 @@ public class Ch12Ex3  extends ConsoleProgram {
 		first.add(754);
 		first.add(87);
 		ArrayList<Integer> sorted = sort(first);
-		for(int i =0; i<sorted.size(); i++) {
-			println(sorted.get(i));
-		}
+			println(sorted);
+
 	}
 	
 	
