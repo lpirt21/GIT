@@ -7,7 +7,7 @@ import java.util.*;
 import javax.swing.*;
 
 public class Ch11Ex9 extends GraphicsProgram {
-
+	private int count =0;
 	private JTextField words;
 	private String line;
 	private int CIRCLE = 13;
@@ -30,7 +30,7 @@ public class Ch11Ex9 extends GraphicsProgram {
 		if(e.getSource() == words) {
 			line = words.getText();
 			StringTokenizer tokenizer = new StringTokenizer(line, " ",true);
-			int count =0;
+			count =0;
 			while(tokenizer.hasMoreTokens()) {
 				String token = tokenizer.nextToken();
 				token = takeString(token);
