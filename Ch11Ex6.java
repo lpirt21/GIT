@@ -7,7 +7,7 @@ import acm.program.*;
 public class Ch11Ex6 extends ConsoleProgram {    
 	
 	public void run() {
-		int n = readInt("prime numbers untill ? ");
+		int n = readInt("prime numbers until ? ");
 		int[]prime =new int[n];
 		array(prime);
 	    check(prime);
