@@ -1,4 +1,4 @@
-//the art and science of java chapter 5 exercise 8
+//the art and science of java chapter 5 exercise 9
 
 import acm.program.*;
 import acm.graphics.*;
