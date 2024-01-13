@@ -10,8 +10,8 @@ public class Ch8Ex20  extends ConsoleProgram{
 
         while (second.length()>first.length()) {
                 println("Second DNA should be same shorter than the first");
-                 second = readLine("-Insert the first DNA chain(correct this time please!): ");
-                 first = readLine("-Insert the second DNA chain(correct this time please!): ");
+                 first = readLine("-Insert the first DNA chain: ");
+                 second = readLine("-Insert the second DNA chain: ");
         } 
         if(findPosition(first,second)!=-1) {
         println("These DNAs match and their matching position is" + findPosition(first, second));
