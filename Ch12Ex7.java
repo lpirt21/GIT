@@ -1,5 +1,7 @@
 //the art and science of java chapter 12 exercise 7
 
+import java.util.Arrays;
+
 import acm.program.*;
 import acm.util.*;
 
@@ -13,7 +15,7 @@ public class Ch12Ex7 extends ConsoleProgram {
 			arr[i] =i+1;
 		}
 		sort(arr);
-		println(arr);
+		println(Arrays.toString(arr));
 	}
 	private void sort(int[] newArray) {
 		for(int lh =0; lh<newArray.length; lh++) {
